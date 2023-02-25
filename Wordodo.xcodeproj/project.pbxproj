@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */; };
+		11B6B31129A92A970015D8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31029A92A970015D8ED /* AppDelegate.swift */; };
+		11B6B31329A92A970015D8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31229A92A970015D8ED /* SceneDelegate.swift */; };
+		11B6B31529A92A970015D8ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31429A92A970015D8ED /* ViewController.swift */; };
+		11B6B31829A92A970015D8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31629A92A970015D8ED /* Main.storyboard */; };
+		11B6B31A29A92A980015D8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31929A92A980015D8ED /* Assets.xcassets */; };
+		11B6B31D29A92A980015D8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */; };
+		11B6B32829A92A980015D8ED /* WordodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B32729A92A980015D8ED /* WordodoTests.swift */; };
+		11B6B33229A92A980015D8ED /* WordodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B33129A92A980015D8ED /* WordodoUITests.swift */; };
+		11B6B33429A92A980015D8ED /* WordodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B33329A92A980015D8ED /* WordodoUITestsLaunchTests.swift */; };
+		11B6B34129A979890015D8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B34029A979890015D8ED /* GoogleService-Info.plist */; };
+		11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */; };
+		11B6B34529A990DA0015D8ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34429A990DA0015D8ED /* SettingsViewController.swift */; };
+		731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */; };
+		EE9EF19E18FF07E0B97817C0 /* Pods_Wordodo_WordodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11B6B32429A92A980015D8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B6B30529A92A970015D8ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11B6B30C29A92A970015D8ED;
+			remoteInfo = Wordodo;
+		};
+		11B6B32E29A92A980015D8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B6B30529A92A970015D8ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11B6B30C29A92A970015D8ED;
+			remoteInfo = Wordodo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		11B6B30D29A92A970015D8ED /* Wordodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B6B31029A92A970015D8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11B6B31229A92A970015D8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		11B6B31429A92A970015D8ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11B6B31729A92A970015D8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11B6B31929A92A980015D8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11B6B31C29A92A980015D8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11B6B31E29A92A980015D8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B6B32329A92A980015D8ED /* WordodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B6B32729A92A980015D8ED /* WordodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordodoTests.swift; sourceTree = "<group>"; };
+		11B6B32D29A92A980015D8ED /* WordodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B6B33129A92A980015D8ED /* WordodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordodoUITests.swift; sourceTree = "<group>"; };
+		11B6B33329A92A980015D8ED /* WordodoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordodoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		11B6B34029A979890015D8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		11B6B34429A990DA0015D8ED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordodoTests.debug.xcconfig"; path = "Target Support Files/Pods-WordodoTests/Pods-WordodoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordodoTests.release.xcconfig"; path = "Target Support Files/Pods-WordodoTests/Pods-WordodoTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo/Pods-Wordodo.debug.xcconfig"; sourceTree = "<group>"; };
+		8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo_WordodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo.release.xcconfig"; path = "Target Support Files/Pods-Wordodo/Pods-Wordodo.release.xcconfig"; sourceTree = "<group>"; };
+		FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.release.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11B6B30A29A92A970015D8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B32029A92A980015D8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B32A29A92A980015D8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE9EF19E18FF07E0B97817C0 /* Pods_Wordodo_WordodoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11B6B30429A92A970015D8ED = {
+			isa = PBXGroup;
+			children = (
+				11B6B30F29A92A970015D8ED /* Wordodo */,
+				11B6B32629A92A980015D8ED /* WordodoTests */,
+				11B6B33029A92A980015D8ED /* WordodoUITests */,
+				11B6B30E29A92A970015D8ED /* Products */,
+				4A058CF272FA59546D935A16 /* Pods */,
+				84113530FAE0F7BFB3C129FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11B6B30E29A92A970015D8ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11B6B30D29A92A970015D8ED /* Wordodo.app */,
+				11B6B32329A92A980015D8ED /* WordodoTests.xctest */,
+				11B6B32D29A92A980015D8ED /* WordodoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11B6B30F29A92A970015D8ED /* Wordodo */ = {
+			isa = PBXGroup;
+			children = (
+				11B6B31029A92A970015D8ED /* AppDelegate.swift */,
+				11B6B31229A92A970015D8ED /* SceneDelegate.swift */,
+				11B6B31429A92A970015D8ED /* ViewController.swift */,
+				11B6B31629A92A970015D8ED /* Main.storyboard */,
+				11B6B31929A92A980015D8ED /* Assets.xcassets */,
+				11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */,
+				11B6B31E29A92A980015D8ED /* Info.plist */,
+				11B6B34029A979890015D8ED /* GoogleService-Info.plist */,
+				11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */,
+				11B6B34429A990DA0015D8ED /* SettingsViewController.swift */,
+			);
+			path = Wordodo;
+			sourceTree = "<group>";
+		};
+		11B6B32629A92A980015D8ED /* WordodoTests */ = {
+			isa = PBXGroup;
+			children = (
+				11B6B32729A92A980015D8ED /* WordodoTests.swift */,
+			);
+			path = WordodoTests;
+			sourceTree = "<group>";
+		};
+		11B6B33029A92A980015D8ED /* WordodoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11B6B33129A92A980015D8ED /* WordodoUITests.swift */,
+				11B6B33329A92A980015D8ED /* WordodoUITestsLaunchTests.swift */,
+			);
+			path = WordodoUITests;
+			sourceTree = "<group>";
+		};
+		4A058CF272FA59546D935A16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */,
+				E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */,
+				0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */,
+				FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */,
+				4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */,
+				5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84113530FAE0F7BFB3C129FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */,
+				8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */,
+				23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11B6B30C29A92A970015D8ED /* Wordodo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B6B33729A92A980015D8ED /* Build configuration list for PBXNativeTarget "Wordodo" */;
+			buildPhases = (
+				90DE65F5D70BC3F1E5F837B3 /* [CP] Check Pods Manifest.lock */,
+				11B6B30929A92A970015D8ED /* Sources */,
+				11B6B30A29A92A970015D8ED /* Frameworks */,
+				11B6B30B29A92A970015D8ED /* Resources */,
+				8AD1B5B45BA6590D80310AAD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wordodo;
+			productName = Wordodo;
+			productReference = 11B6B30D29A92A970015D8ED /* Wordodo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11B6B32229A92A980015D8ED /* WordodoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B6B33A29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoTests" */;
+			buildPhases = (
+				755A690E0588935ACF5A0FAD /* [CP] Check Pods Manifest.lock */,
+				11B6B31F29A92A980015D8ED /* Sources */,
+				11B6B32029A92A980015D8ED /* Frameworks */,
+				11B6B32129A92A980015D8ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11B6B32529A92A980015D8ED /* PBXTargetDependency */,
+			);
+			name = WordodoTests;
+			productName = WordodoTests;
+			productReference = 11B6B32329A92A980015D8ED /* WordodoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11B6B32C29A92A980015D8ED /* WordodoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B6B33D29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoUITests" */;
+			buildPhases = (
+				F03301BF6E6DC140DA4783C0 /* [CP] Check Pods Manifest.lock */,
+				11B6B32929A92A980015D8ED /* Sources */,
+				11B6B32A29A92A980015D8ED /* Frameworks */,
+				11B6B32B29A92A980015D8ED /* Resources */,
+				5EA1140A38E1F26841B4FBAC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11B6B32F29A92A980015D8ED /* PBXTargetDependency */,
+			);
+			name = WordodoUITests;
+			productName = WordodoUITests;
+			productReference = 11B6B32D29A92A980015D8ED /* WordodoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11B6B30529A92A970015D8ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					11B6B30C29A92A970015D8ED = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					11B6B32229A92A980015D8ED = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 11B6B30C29A92A970015D8ED;
+					};
+					11B6B32C29A92A980015D8ED = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 11B6B30C29A92A970015D8ED;
+					};
+				};
+			};
+			buildConfigurationList = 11B6B30829A92A970015D8ED /* Build configuration list for PBXProject "Wordodo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11B6B30429A92A970015D8ED;
+			productRefGroup = 11B6B30E29A92A970015D8ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11B6B30C29A92A970015D8ED /* Wordodo */,
+				11B6B32229A92A980015D8ED /* WordodoTests */,
+				11B6B32C29A92A980015D8ED /* WordodoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11B6B30B29A92A970015D8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B6B31D29A92A980015D8ED /* LaunchScreen.storyboard in Resources */,
+				11B6B34129A979890015D8ED /* GoogleService-Info.plist in Resources */,
+				11B6B31A29A92A980015D8ED /* Assets.xcassets in Resources */,
+				11B6B31829A92A970015D8ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B32129A92A980015D8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B32B29A92A980015D8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EA1140A38E1F26841B4FBAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		755A690E0588935ACF5A0FAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WordodoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AD1B5B45BA6590D80310AAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90DE65F5D70BC3F1E5F837B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wordodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F03301BF6E6DC140DA4783C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wordodo-WordodoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11B6B30929A92A970015D8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B6B31529A92A970015D8ED /* ViewController.swift in Sources */,
+				11B6B31129A92A970015D8ED /* AppDelegate.swift in Sources */,
+				11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */,
+				11B6B34529A990DA0015D8ED /* SettingsViewController.swift in Sources */,
+				11B6B31329A92A970015D8ED /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B31F29A92A980015D8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B6B32829A92A980015D8ED /* WordodoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B6B32929A92A980015D8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B6B33229A92A980015D8ED /* WordodoUITests.swift in Sources */,
+				11B6B33429A92A980015D8ED /* WordodoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11B6B32529A92A980015D8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11B6B30C29A92A970015D8ED /* Wordodo */;
+			targetProxy = 11B6B32429A92A980015D8ED /* PBXContainerItemProxy */;
+		};
+		11B6B32F29A92A980015D8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11B6B30C29A92A970015D8ED /* Wordodo */;
+			targetProxy = 11B6B32E29A92A980015D8ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11B6B31629A92A970015D8ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11B6B31729A92A970015D8ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11B6B31C29A92A980015D8ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11B6B33529A92A980015D8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11B6B33629A92A980015D8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11B6B33829A92A980015D8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Wordodo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.Wordodo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11B6B33929A92A980015D8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Wordodo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.Wordodo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11B6B33B29A92A980015D8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.WordodoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordodo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordodo";
+			};
+			name = Debug;
+		};
+		11B6B33C29A92A980015D8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.WordodoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordodo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordodo";
+			};
+			name = Release;
+		};
+		11B6B33E29A92A980015D8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.WordodoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordodo;
+			};
+			name = Debug;
+		};
+		11B6B33F29A92A980015D8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y25UG64XN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kadiryilmaz.WordodoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordodo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11B6B30829A92A970015D8ED /* Build configuration list for PBXProject "Wordodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B6B33529A92A980015D8ED /* Debug */,
+				11B6B33629A92A980015D8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B6B33729A92A980015D8ED /* Build configuration list for PBXNativeTarget "Wordodo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B6B33829A92A980015D8ED /* Debug */,
+				11B6B33929A92A980015D8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B6B33A29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B6B33B29A92A980015D8ED /* Debug */,
+				11B6B33C29A92A980015D8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B6B33D29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B6B33E29A92A980015D8ED /* Debug */,
+				11B6B33F29A92A980015D8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11B6B30529A92A970015D8ED /* Project object */;
+}
