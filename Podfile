@@ -8,6 +8,7 @@ target 'Wordodo' do
 pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'Alamofire'
 
   # Pods for Wordodo
 
