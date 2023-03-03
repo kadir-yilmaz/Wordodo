@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */; };
+		113011DF29B278F80074EF40 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113011DE29B278F80074EF40 /* JSONResponse.swift */; };
 		119BDB2E29AE839A00656EA1 /* QuizSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BDB2D29AE839A00656EA1 /* QuizSubjectsViewController.swift */; };
 		119BDB3229AE852100656EA1 /* QuizSubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BDB3129AE852100656EA1 /* QuizSubjectTableViewCell.swift */; };
 		119BDB3629AE871300656EA1 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BDB3529AE871300656EA1 /* Subject.swift */; };
@@ -28,6 +29,8 @@
 		11B6B34129A979890015D8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B34029A979890015D8ED /* GoogleService-Info.plist */; };
 		11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */; };
 		11B6B34529A990DA0015D8ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34429A990DA0015D8ED /* SettingsViewController.swift */; };
+		11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50829AF735E002E2862 /* StudyViewController.swift */; };
+		11D1F50B29AF74B8002E2862 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50A29AF74B8002E2862 /* WordCardView.swift */; };
 		731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */; };
 		EE9EF19E18FF07E0B97817C0 /* Pods_Wordodo_WordodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		113011DE29B278F80074EF40 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		119BDB2D29AE839A00656EA1 /* QuizSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSubjectsViewController.swift; sourceTree = "<group>"; };
 		119BDB3129AE852100656EA1 /* QuizSubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSubjectTableViewCell.swift; sourceTree = "<group>"; };
 		119BDB3529AE871300656EA1 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		11B6B34029A979890015D8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		11B6B34429A990DA0015D8ED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11D1F50829AF735E002E2862 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		11D1F50A29AF74B8002E2862 /* WordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardView.swift; sourceTree = "<group>"; };
 		227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordodoTests.debug.xcconfig"; path = "Target Support Files/Pods-WordodoTests/Pods-WordodoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				119BDB3F29AEA18900656EA1 /* Word.swift */,
+				113011DE29B278F80074EF40 /* JSONResponse.swift */,
 				119BDB3529AE871300656EA1 /* Subject.swift */,
 			);
 			path = Model;
@@ -143,6 +150,8 @@
 				119BDB3129AE852100656EA1 /* QuizSubjectTableViewCell.swift */,
 				119BDB4129AEAA5000656EA1 /* StudySubjectsViewController.swift */,
 				119BDB4329AEABEA00656EA1 /* StudySubjectTableViewCell.swift */,
+				11D1F50A29AF74B8002E2862 /* WordCardView.swift */,
+				11D1F50829AF735E002E2862 /* StudyViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,10 +188,10 @@
 		11B6B30F29A92A970015D8ED /* Wordodo */ = {
 			isa = PBXGroup;
 			children = (
+				119BDB3B29AE9D5100656EA1 /* WebService */,
 				119BDB3E29AE9D7E00656EA1 /* ViewModel */,
 				119BDB3D29AE9D7300656EA1 /* View */,
 				119BDB3C29AE9D6700656EA1 /* Model */,
-				119BDB3B29AE9D5100656EA1 /* WebService */,
 				11B6B31629A92A970015D8ED /* Main.storyboard */,
 				11B6B31929A92A980015D8ED /* Assets.xcassets */,
 				11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */,
@@ -474,12 +483,15 @@
 			files = (
 				119BDB3629AE871300656EA1 /* Subject.swift in Sources */,
 				11B6B31529A92A970015D8ED /* ViewController.swift in Sources */,
+				11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */,
 				11B6B31129A92A970015D8ED /* AppDelegate.swift in Sources */,
 				119BDB3229AE852100656EA1 /* QuizSubjectTableViewCell.swift in Sources */,
 				11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */,
+				113011DF29B278F80074EF40 /* JSONResponse.swift in Sources */,
 				11B6B34529A990DA0015D8ED /* SettingsViewController.swift in Sources */,
 				119BDB4029AEA18900656EA1 /* Word.swift in Sources */,
 				119BDB3829AE8DAD00656EA1 /* QuizViewController.swift in Sources */,
+				11D1F50B29AF74B8002E2862 /* WordCardView.swift in Sources */,
 				119BDB2E29AE839A00656EA1 /* QuizSubjectsViewController.swift in Sources */,
 				119BDB4229AEAA5000656EA1 /* StudySubjectsViewController.swift in Sources */,
 				119BDB3A29AE9D4100656EA1 /* WebService.swift in Sources */,

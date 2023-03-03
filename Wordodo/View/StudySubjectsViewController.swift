@@ -44,5 +44,11 @@ extension StudySubjectsViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toStudyVC", sender: nil)
+    }
+    
+    
+    
     
 }

@@ -62,7 +62,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DALL·E 2023-02-25 03.05.34 - cyberpunk dodo icon with black background, digital art" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-xO-Ze1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Animals" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-xO-Ze1">
                                 <rect key="frame" x="146" y="193" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -154,7 +154,7 @@
                                                         <constraint firstAttribute="height" constant="120" id="iSh-go-RQX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-kf-nXF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-kf-nXF">
                                                     <rect key="frame" x="148" y="11" width="225" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="225" id="ZwK-WG-BAD"/>
@@ -379,7 +379,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kBg-Hv-Nl1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-I7-LbA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-I7-LbA">
                                                     <rect key="frame" x="148" y="11" width="225" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="PbG-fI-6l6"/>
@@ -418,28 +418,77 @@
                     <navigationItem key="navigationItem" id="uJQ-Jg-tFb"/>
                     <connections>
                         <outlet property="tableView" destination="I2t-KL-9u5" id="e7u-ES-D31"/>
-                        <segue destination="sFN-gq-MmG" kind="show" id="x2P-SQ-zVZ"/>
+                        <segue destination="sFN-gq-MmG" kind="show" identifier="toStudyVC" id="x2P-SQ-zVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWB-i5-5ZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3753.4351145038167" y="-785.21126760563379"/>
         </scene>
-        <!--View Controller-->
+        <!--Study View Controller-->
         <scene sceneID="f4Y-8X-2vX">
             <objects>
-                <viewController id="sFN-gq-MmG" sceneMemberID="viewController">
+                <viewController id="sFN-gq-MmG" customClass="StudyViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ta6-0i-c0e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9c-IG-J4m">
+                                <rect key="frame" x="283" y="682" width="52" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="İleri"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="sFN-gq-MmG" eventType="touchUpInside" id="623-D1-L82"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-Mf-ckW">
+                                <rect key="frame" x="59" y="682" width="56" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Geri"/>
+                                <connections>
+                                    <action selector="previousButtonClicked:" destination="sFN-gq-MmG" eventType="touchUpInside" id="PMs-5f-lkn"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjp-fk-51y">
+                                <rect key="frame" x="16" y="458" width="361" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BCY-aw-s1I"/>
+                                    <constraint firstAttribute="width" constant="361" id="ad3-f5-5qf"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSn-AF-AKK">
+                                <rect key="frame" x="99" y="123.99999999999999" width="195" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pzl-GT-Imf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kjp-fk-51y" firstAttribute="leading" secondItem="pzl-GT-Imf" secondAttribute="leading" constant="16" id="LTI-xN-2zz"/>
+                            <constraint firstItem="pzl-GT-Imf" firstAttribute="trailing" secondItem="Kjp-fk-51y" secondAttribute="trailing" constant="16" id="eN4-b4-jnJ"/>
+                            <constraint firstItem="pzl-GT-Imf" firstAttribute="trailing" secondItem="qSn-AF-AKK" secondAttribute="trailing" constant="99" id="m8b-lQ-SYt"/>
+                            <constraint firstItem="Kjp-fk-51y" firstAttribute="top" secondItem="qSn-AF-AKK" secondAttribute="bottom" constant="313.67000000000002" id="nR8-Yw-cnh"/>
+                            <constraint firstItem="qSn-AF-AKK" firstAttribute="top" secondItem="pzl-GT-Imf" secondAttribute="top" constant="21" id="rdx-Zj-AFL"/>
+                            <constraint firstItem="qSn-AF-AKK" firstAttribute="leading" secondItem="pzl-GT-Imf" secondAttribute="leading" constant="99" id="tQf-gI-Cnm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HzH-vB-aRd"/>
+                    <connections>
+                        <outlet property="wordOrderLabel" destination="qSn-AF-AKK" id="8yB-nY-fsv"/>
+                        <outlet property="wordSentenceTextView" destination="Kjp-fk-51y" id="0HO-BJ-n7w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGi-md-2pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4575" y="-785"/>
+            <point key="canvasLocation" x="4574.8091603053435" y="-785.21126760563379"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aOt-om-ZGN">
@@ -523,7 +572,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Animals" width="1024" height="1024"/>
-        <image name="DALL·E 2023-02-25 03.05.34 - cyberpunk dodo icon with black background, digital art" width="1024" height="1024"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="questionmark.bubble.fill" catalog="system" width="128" height="110"/>
