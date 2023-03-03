@@ -1,18 +1,21 @@
 //
-//  QuizSubjectTableViewCell.swift
+//  StudySubjectTableViewCell.swift
 //  Wordodo
 //
-//  Created by Kadir Yılmaz on 28.02.2023.
+//  Created by Kadir Yılmaz on 1.03.2023.
 //
 
 import UIKit
 
-class QuizSubjectTableViewCell: UITableViewCell {
+class SubjectTableViewCell: UITableViewCell {
+    
     
     
     @IBOutlet weak var subjectImageView: UIImageView!
+    
     @IBOutlet weak var subjectNameLabel: UILabel!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
