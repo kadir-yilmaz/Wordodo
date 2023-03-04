@@ -62,7 +62,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Animals" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-xO-Ze1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dodo" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-xO-Ze1">
                                 <rect key="frame" x="146" y="193" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -126,6 +126,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibB-Al-ygO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="806"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="yFd-FM-SYk">
+            <objects>
+                <viewController id="RKh-md-srI" customClass="ResultViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kvi-0K-hX7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cof-pR-nrj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pSv-aS-aeG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCG-t5-201" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3751" y="-1575"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="3IV-qS-LTP">
@@ -223,10 +239,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="RG4-Yj-EUq"/>
                     <connections>
+                        <outlet property="buttonA" destination="qGZ-wH-JJj" id="7YQ-ze-ltX"/>
+                        <outlet property="buttonB" destination="KHu-tj-hwY" id="jR1-Pl-LVo"/>
+                        <outlet property="buttonC" destination="52e-Bt-pnU" id="CEP-ZW-VIg"/>
+                        <outlet property="buttonD" destination="kyB-Ix-KF3" id="0ld-Xm-lwZ"/>
                         <outlet property="falseLabel" destination="5tx-Wq-xN0" id="6ym-vN-uZJ"/>
                         <outlet property="trueLabel" destination="5p0-Bq-Vog" id="QJP-ft-K92"/>
                         <outlet property="wordEnLabel" destination="TN1-ti-RLh" id="SXj-Tb-Fbv"/>
                         <outlet property="wordSentenceTextView" destination="S18-zO-uyp" id="Pr3-AK-s1l"/>
+                        <segue destination="RKh-md-srI" kind="show" identifier="toResultVC" id="FDT-0l-cHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDo-br-hna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -302,15 +323,15 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals" translatesAutoresizingMaskIntoConstraints="NO" id="hGU-Cz-RWa">
                                                     <rect key="frame" x="20" y="11" width="120" height="125"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="2kU-be-QWb"/>
+                                                        <constraint firstAttribute="height" constant="125" id="2kU-be-QWb"/>
                                                         <constraint firstAttribute="width" constant="120" id="W5g-av-Bln"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kBg-Hv-Nl1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-I7-LbA">
-                                                    <rect key="frame" x="148" y="11" width="225" height="21"/>
+                                                    <rect key="frame" x="148" y="11" width="225" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="PbG-fI-6l6"/>
+                                                        <constraint firstAttribute="height" constant="34" id="PbG-fI-6l6"/>
                                                         <constraint firstAttribute="width" constant="225" id="aAt-gS-8gP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -352,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWB-i5-5ZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="4"/>
+            <point key="canvasLocation" x="3751.9083969465646" y="3.5211267605633805"/>
         </scene>
         <!--Study View Controller-->
         <scene sceneID="f4Y-8X-2vX">
@@ -417,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGi-md-2pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4618" y="4"/>
+            <point key="canvasLocation" x="4617.5572519083971" y="3.5211267605633805"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aOt-om-ZGN">
@@ -518,7 +539,8 @@
         <segue reference="J4K-md-0C9"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Animals" width="1024" height="1024"/>
+        <image name="Animals" width="850" height="540"/>
+        <image name="Dodo" width="1024" height="1024"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>

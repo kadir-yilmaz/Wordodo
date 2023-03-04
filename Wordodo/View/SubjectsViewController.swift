@@ -57,6 +57,12 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 5 {
+            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsFromAnimals.php"
+        }else if indexPath.row == 1 {
+            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php"
+        }
+        
         performSegue(withIdentifier: "toStudyVC", sender: nil)
     }
     
@@ -71,6 +77,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
                 
         return UISwipeActionsConfiguration(actions: [quizAction])
     }
+    
     
     
 }

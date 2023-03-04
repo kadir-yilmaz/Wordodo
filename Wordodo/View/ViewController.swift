@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        overrideUserInterfaceStyle = .dark
+        //overrideUserInterfaceStyle = .dark
     }
     
     @IBAction func signInButtonClicked(_ sender: Any) {

@@ -8,6 +8,7 @@
 import Foundation
 
 class Word: Codable {
+    
     var wordId: String?
     var wordEn: String?
     var wordTr: String?
