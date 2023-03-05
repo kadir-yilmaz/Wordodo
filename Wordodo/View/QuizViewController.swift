@@ -40,7 +40,7 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     var secenekler = [Word]()
     
     var timer = Timer()
-    var counter = 10
+    var counter = 60
     
     var score = 0
     
@@ -74,7 +74,7 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
         
         if counter == -1 {
             timer.invalidate()
-            score = 5 * dogruSayac - yanlisSayac
+            score = 4 * dogruSayac -  1 * yanlisSayac
             print(score)
             if let currentUserUid = Auth.auth().currentUser?.uid {
                 let db = Firestore.firestore()
