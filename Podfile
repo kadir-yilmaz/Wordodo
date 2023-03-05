@@ -9,6 +9,8 @@ pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'Alamofire'
+pod 'Google-Mobile-Ads-SDK'
+
 
   # Pods for Wordodo
 

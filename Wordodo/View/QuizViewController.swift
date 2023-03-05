@@ -9,8 +9,12 @@ import UIKit
 import Alamofire
 import FirebaseAuth
 import FirebaseFirestore
+import GoogleMobileAds
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, GADFullScreenContentDelegate {
+    
+    private var interstitial: GADInterstitialAd?
+
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var trueLabel: UILabel!
@@ -36,7 +40,7 @@ class QuizViewController: UIViewController {
     var secenekler = [Word]()
     
     var timer = Timer()
-    var counter = 60
+    var counter = 10
     
     var score = 0
     
@@ -46,6 +50,20 @@ class QuizViewController: UIViewController {
         loadWords()
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(geriSay), userInfo: nil, repeats: true)
+        
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                interstitial?.fullScreenContentDelegate = self
+
+                              }
+            )
 
     }
     
@@ -71,6 +89,11 @@ class QuizViewController: UIViewController {
                 }
             } else {
                 print("User is not logged in")
+            }
+            if interstitial != nil {
+                interstitial?.present(fromRootViewController: self)
+            } else {
+              print("Ad wasn't ready")
             }
             performSegue(withIdentifier: "toResultVC", sender: nil)
         }
@@ -201,6 +224,11 @@ class QuizViewController: UIViewController {
         }else{
             counter = 0
             performSegue(withIdentifier: "toResultVC", sender: nil)
+            if interstitial != nil {
+                interstitial?.present(fromRootViewController: self)
+            } else {
+              print("Ad wasn't ready")
+            }
 
         }
     }
@@ -213,6 +241,28 @@ class QuizViewController: UIViewController {
             destination.scoreCount = score
 
         }
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        print("clicked")
+        
+        
+        
+    }
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+      print("Ad did fail to present full screen content.")
+    }
+
+    /// Tells the delegate that the ad will present full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+      print("Ad will present full screen content.")
+    }
+
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+      print("Ad did dismiss full screen content.")
     }
     
     
