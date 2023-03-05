@@ -58,7 +58,6 @@ class StudyViewController: UIViewController {
         let word = self.words[currentWordIndex]
         self.wordCard.wordLabel.text = word.wordEn
         self.wordCard.meaningLabel.text = word.wordTr
-        let orderText = "\(currentWordIndex+1)/\(self.words.count)"
         self.wordSentenceTextView.text = word.wordSentence
 
     }

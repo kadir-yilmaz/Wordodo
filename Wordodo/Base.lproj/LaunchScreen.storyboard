@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DALL·E 2023-02-25 03.05.34 - cyberpunk dodo icon with black background, digital art" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-6F-uxx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dodo" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-6F-uxx">
                                 <rect key="frame" x="46" y="276" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -30,6 +30,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DALL·E 2023-02-25 03.05.34 - cyberpunk dodo icon with black background, digital art" width="1024" height="1024"/>
+        <image name="Dodo" width="1024" height="1024"/>
     </resources>
 </document>

@@ -7,6 +7,8 @@
 
 import UIKit
 import Alamofire
+import FirebaseAuth
+import FirebaseFirestore
 
 class QuizViewController: UIViewController {
     
@@ -36,6 +38,8 @@ class QuizViewController: UIViewController {
     var timer = Timer()
     var counter = 60
     
+    var score = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,10 +56,27 @@ class QuizViewController: UIViewController {
         
         if counter == -1 {
             timer.invalidate()
+            score = 5 * dogruSayac - yanlisSayac
+            print(score)
+            if let currentUserUid = Auth.auth().currentUser?.uid {
+                let db = Firestore.firestore()
+                let userDocRef = db.collection("users").document(currentUserUid)
+                
+                userDocRef.updateData(["user_score": FieldValue.increment(Int64(score))]) { error in
+                    if let error = error {
+                        print("Error updating user score: \(error.localizedDescription)")
+                    } else {
+                        print("User score updated successfully")
+                    }
+                }
+            } else {
+                print("User is not logged in")
+            }
             performSegue(withIdentifier: "toResultVC", sender: nil)
         }
         
     }
+    
     
     func loadWords() {
         AF.request(url123, method: .get).response { response in
@@ -91,9 +112,6 @@ class QuizViewController: UIViewController {
         } else {
             print("wordId değeri nil!")
         }
-
-
-        
        
     }
     
@@ -181,7 +199,19 @@ class QuizViewController: UIViewController {
         if soruSayac != sorular.count {
             soruYukle()
         }else{
+            counter = 0
             performSegue(withIdentifier: "toResultVC", sender: nil)
+
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResultVC" {
+            let destination = segue.destination as! ResultViewController
+            destination.trueCount = dogruSayac
+            destination.falseCount = yanlisSayac
+            destination.scoreCount = score
+
         }
     }
     

@@ -1,20 +1,15 @@
 //
-//  StudySubjectTableViewCell.swift
+//  SettingTableViewCell.swift
 //  Wordodo
 //
-//  Created by Kadir Yılmaz on 1.03.2023.
+//  Created by Kadir Yılmaz on 5.03.2023.
 //
 
 import UIKit
 
-class SubjectTableViewCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var subjectImageView: UIImageView!
-    
-    @IBOutlet weak var subjectNameLabel: UILabel!
-    
+class SettingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var settingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

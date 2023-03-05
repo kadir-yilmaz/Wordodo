@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
@@ -42,6 +43,12 @@ class SignUpViewController: UIViewController {
                     // E-posta doğrulama mesajını kullanıcıya göster
                     self.makeAlert(titleInput: "Email Verification", messageInput: "Verification email sent. Please check your inbox and follow the instructions to verify your email address.")
                 }
+            
+            let db = Firestore.firestore()
+                    let userDocRef = db.collection("users").document(user.uid)
+            userDocRef.setData(["user_id": user.uid, "user_name": "user_\(Int.random(in: 1...100000))", "user_score": 0])
+            
+            
             }
     }
     

@@ -1,20 +1,20 @@
 //
-//  StudySubjectTableViewCell.swift
+//  RankTableViewCell.swift
 //  Wordodo
 //
-//  Created by Kadir Yılmaz on 1.03.2023.
+//  Created by Kadir Yılmaz on 5.03.2023.
 //
 
 import UIKit
 
-class SubjectTableViewCell: UITableViewCell {
+class RankTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var userNameLabel: UILabel!
     
     
-    @IBOutlet weak var subjectImageView: UIImageView!
+    @IBOutlet weak var userScoreLabel: UILabel!
     
-    @IBOutlet weak var subjectNameLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +25,5 @@ class SubjectTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
