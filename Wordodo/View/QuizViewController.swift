@@ -10,6 +10,7 @@ import Alamofire
 
 class QuizViewController: UIViewController {
     
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var trueLabel: UILabel!
     @IBOutlet weak var falseLabel: UILabel!
     @IBOutlet weak var wordEnLabel: UILabel!
@@ -20,7 +21,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
-    var url123 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get10WordsFromAnimals.php"
+    var url123 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsFromAnimals.php"
     
     var sorular = [Word]()
     var yanlisSecenekler = [Word]()
@@ -32,12 +33,28 @@ class QuizViewController: UIViewController {
     
     var secenekler = [Word]()
     
+    var timer = Timer()
+    var counter = 60
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadWords()
         
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(geriSay), userInfo: nil, repeats: true)
 
+    }
+    
+    @objc func geriSay(){
+        
+        timeLabel.text = "\(counter)"
+        counter -= 1
+        
+        if counter == -1 {
+            timer.invalidate()
+            performSegue(withIdentifier: "toResultVC", sender: nil)
+        }
+        
     }
     
     func loadWords() {
@@ -161,7 +178,7 @@ class QuizViewController: UIViewController {
     func soruSayacKontrol(){
         soruSayac += 1
         
-        if soruSayac != 10 {
+        if soruSayac != sorular.count {
             soruYukle()
         }else{
             performSegue(withIdentifier: "toResultVC", sender: nil)
