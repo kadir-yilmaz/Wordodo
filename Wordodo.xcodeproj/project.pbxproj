@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */; };
 		113011DF29B278F80074EF40 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113011DE29B278F80074EF40 /* JSONResponse.swift */; };
+		113C3A9D29B61E0800D1292E /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C3A9C29B61E0800D1292E /* AddWordViewController.swift */; };
 		1140D3BB29B49D5D00D375DF /* RanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140D3BA29B49D5D00D375DF /* RanksViewController.swift */; };
 		1140D3BD29B49E0A00D375DF /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140D3BC29B49E0A00D375DF /* RankTableViewCell.swift */; };
 		1140D3BF29B4AC4900D375DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140D3BE29B4AC4900D375DF /* User.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		113011DE29B278F80074EF40 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
+		113C3A9C29B61E0800D1292E /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		1140D3BA29B49D5D00D375DF /* RanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RanksViewController.swift; sourceTree = "<group>"; };
 		1140D3BC29B49E0A00D375DF /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		1140D3BE29B4AC4900D375DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */,
 				11B6B31E29A92A980015D8ED /* Info.plist */,
 				11B6B34029A979890015D8ED /* GoogleService-Info.plist */,
+				113C3A9C29B61E0800D1292E /* AddWordViewController.swift */,
 			);
 			path = Wordodo;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				11B6B31529A92A970015D8ED /* ViewController.swift in Sources */,
 				1140D3BB29B49D5D00D375DF /* RanksViewController.swift in Sources */,
 				11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */,
+				113C3A9D29B61E0800D1292E /* AddWordViewController.swift in Sources */,
 				11B6B31129A92A970015D8ED /* AppDelegate.swift in Sources */,
 				11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */,
 				1140D3C329B4BE6800D375DF /* SettingTableViewCell.swift in Sources */,

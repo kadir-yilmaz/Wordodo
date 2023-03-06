@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SubjectsViewController: UIViewController {
 
@@ -22,8 +23,8 @@ class SubjectsViewController: UIViewController {
         
         let s1 = Subject(subjectName: "YDS & YÖKDiL", subjectTable: "yds")
         let s2 = Subject(subjectName: "Animals", subjectTable: "animals")
-        let s3 = Subject(subjectName: "Colors", subjectTable: "colors")
-        let s4 = Subject(subjectName: "Fruits-Vegetables", subjectTable: "fruits")
+        let s3 = Subject(subjectName: "Fruits", subjectTable: "fruits")
+        let s4 = Subject(subjectName: "Vegetables", subjectTable: "vegetables")
         let s5 = Subject(subjectName: "Kitchen", subjectTable: "kitchen")
         let s6 = Subject(subjectName: "Verbs", subjectTable: "verbs")
         let s7 = Subject(subjectName: "Phrasal Verbs", subjectTable: "phrasal_verbs")
@@ -36,7 +37,7 @@ class SubjectsViewController: UIViewController {
         let s14 = Subject(subjectName: "Weather", subjectTable: "weather")
         let s15 = Subject(subjectName: "Clothes", subjectTable: "clothes")
         let s16 = Subject(subjectName: "Family", subjectTable: "family")
-        let s17 = Subject(subjectName: "My List", subjectTable: "my_list")
+        let s17 = Subject(subjectName: "My List", subjectTable: "user_table")
 
         
 
@@ -78,8 +79,14 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row != 16 {
+            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(subjects[indexPath.row].subjectTable!)"
+        }
         
-        StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(subjects[indexPath.row].subjectTable!)"
+        if indexPath.row == 16 {
+            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
+        }
+        
         
         performSegue(withIdentifier: "toStudyVC", sender: nil)
     }
@@ -89,8 +96,16 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         let quizAction = UIContextualAction(style: .normal, title: "Quiz"){
                     (UIContextualAction, view, boolValue) in
             
-            QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
-            QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+            if indexPath.row != 16 {
+                QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+                QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+            }
+            
+            if indexPath.row == 16 {
+                QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
+                QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
+            }
+            
             
             
             self.performSegue(withIdentifier: "toQuizVC", sender: nil)

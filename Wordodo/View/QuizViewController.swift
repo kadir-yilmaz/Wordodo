@@ -143,7 +143,6 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     
     func getWrongWords(forWordId wordId: Int) {
         let url3 = "\(QuizViewController.url2)&word_id=\(wordId)"
-        print(url3)
         AF.request(url3, method: .get).response { [self] response in
             if let data = response.data {
                 do {

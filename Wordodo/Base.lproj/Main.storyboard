@@ -623,7 +623,13 @@
                             <constraint firstItem="qSn-AF-AKK" firstAttribute="leading" secondItem="pzl-GT-Imf" secondAttribute="leading" constant="99" id="tQf-gI-Cnm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HzH-vB-aRd"/>
+                    <navigationItem key="navigationItem" id="HzH-vB-aRd">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="0OL-fV-L8o">
+                            <connections>
+                                <segue destination="v1m-Gn-QQM" kind="show" identifier="toAddWordVC" id="o1v-kQ-hl6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="FSN-ae-mtT" id="qaq-VJ-3OW"/>
                         <outlet property="wordOrderLabel" destination="qSn-AF-AKK" id="8yB-nY-fsv"/>
@@ -633,6 +639,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGi-md-2pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4617.5572519083971" y="3.5211267605633805"/>
+        </scene>
+        <!--Add Word View Controller-->
+        <scene sceneID="I7x-FK-uUJ">
+            <objects>
+                <viewController id="v1m-Gn-QQM" customClass="AddWordViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6nW-di-xzH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kelime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eR3-55-Jx9">
+                                <rect key="frame" x="36" y="186" width="321" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Anlamı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-gT-Pe4">
+                                <rect key="frame" x="36" y="261" width="321" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="I liked this app." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PUd-1G-VwP">
+                                <rect key="frame" x="36" y="342" width="321" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqJ-7C-5fF">
+                                <rect key="frame" x="158" y="557" width="77" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Kaydet"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="v1m-Gn-QQM" eventType="touchUpInside" id="LaA-nk-Ank"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JGl-dF-oNa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hxx-fs-Fbk"/>
+                    <connections>
+                        <outlet property="wordEnLabel" destination="eR3-55-Jx9" id="25k-h4-ida"/>
+                        <outlet property="wordSentenceTextView" destination="PUd-1G-VwP" id="64a-oI-xlr"/>
+                        <outlet property="wordTrLabel" destination="ZLk-gT-Pe4" id="x8r-Tf-vvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpW-Z0-31R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5438.9312977099235" y="3.5211267605633805"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="9Fr-SX-ZpN">
+            <objects>
+                <viewController id="r8j-Pw-1fb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2FL-N7-MN2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Lsp-UF-3WW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="CW7-0m-z17"/>
+                    <navigationItem key="navigationItem" id="A23-0i-0SI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4AN-oN-4Yp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="-758"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aOt-om-ZGN">
@@ -647,6 +722,7 @@
                         <segue destination="0up-CL-XWe" kind="relationship" relationship="viewControllers" id="McY-ng-17A"/>
                         <segue destination="mAS-yR-PCD" kind="relationship" relationship="viewControllers" id="cGG-ET-VOn"/>
                         <segue destination="dcO-wf-dAf" kind="relationship" relationship="viewControllers" id="dZW-9l-Dfn"/>
+                        <segue destination="r8j-Pw-1fb" kind="relationship" relationship="viewControllers" id="uog-za-Fgq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go1-ub-eCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -738,6 +814,7 @@
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
