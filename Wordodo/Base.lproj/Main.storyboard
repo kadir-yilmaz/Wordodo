@@ -512,7 +512,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-I7-LbA">
-                                                    <rect key="frame" x="148" y="11" width="225" height="34"/>
+                                                    <rect key="frame" x="148" y="56" width="225" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="PbG-fI-6l6"/>
                                                         <constraint firstAttribute="width" constant="225" id="aAt-gS-8gP"/>
@@ -524,7 +524,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RX2-I7-LbA" firstAttribute="leading" secondItem="hGU-Cz-RWa" secondAttribute="trailing" constant="8" id="HRl-g8-Fjo"/>
-                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="RX2-I7-LbA" secondAttribute="top" id="U0i-86-zJU"/>
+                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="RX2-I7-LbA" secondAttribute="top" constant="-45" id="U0i-86-zJU"/>
                                                 <constraint firstItem="hGU-Cz-RWa" firstAttribute="leading" secondItem="7j8-ay-okw" secondAttribute="leadingMargin" id="XOL-dV-Bj9"/>
                                                 <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="7j8-ay-okw" secondAttribute="topMargin" id="aID-zV-P3I"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hGU-Cz-RWa" secondAttribute="bottom" constant="3" id="pL9-9l-a9N"/>

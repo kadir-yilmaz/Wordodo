@@ -9,9 +9,11 @@ import Foundation
 
 class Subject {
     var subjectName: String?
+    var subjectTable: String?
     
-    init(subjectName: String? = nil) {
+    init(subjectName: String? = nil, subjectTable: String? = nil) {
         self.subjectName = subjectName
+        self.subjectTable = subjectTable
     }
     
 }

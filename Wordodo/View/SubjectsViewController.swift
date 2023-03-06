@@ -20,24 +20,23 @@ class SubjectsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let s1 = Subject(subjectName: "YDS & YÖKDiL")
-        let s2 = Subject(subjectName: "Animals")
-        let s3 = Subject(subjectName: "Colors")
-        let s4 = Subject(subjectName: "Fruits-Vegetables")
-        let s5 = Subject(subjectName: "Kitchen")
-        let s6 = Subject(subjectName: "Verbs")
-        let s7 = Subject(subjectName: "Phrasal Verbs")
-        let s8 = Subject(subjectName: "Idioms")
-        let s9 = Subject(subjectName: "Directions")
-        let s10 = Subject(subjectName: "Body")
-        let s11 = Subject(subjectName: "Jobs")
-        let s12 = Subject(subjectName: "Transport")
-        let s13 = Subject(subjectName: "Time")
-        let s14 = Subject(subjectName: "Weather")
-        let s15 = Subject(subjectName: "Clothes")
-        let s16 = Subject(subjectName: "Family")
-        let s17 = Subject(subjectName: "Hobby-Sports")
-        let s18 = Subject(subjectName: "My List")
+        let s1 = Subject(subjectName: "YDS & YÖKDiL", subjectTable: "yds")
+        let s2 = Subject(subjectName: "Animals", subjectTable: "animals")
+        let s3 = Subject(subjectName: "Colors", subjectTable: "colors")
+        let s4 = Subject(subjectName: "Fruits-Vegetables", subjectTable: "fruits")
+        let s5 = Subject(subjectName: "Kitchen", subjectTable: "kitchen")
+        let s6 = Subject(subjectName: "Verbs", subjectTable: "verbs")
+        let s7 = Subject(subjectName: "Phrasal Verbs", subjectTable: "phrasal_verbs")
+        let s8 = Subject(subjectName: "Idioms", subjectTable: "idioms")
+        let s9 = Subject(subjectName: "Directions", subjectTable: "directions")
+        let s10 = Subject(subjectName: "Body", subjectTable: "body")
+        let s11 = Subject(subjectName: "Jobs", subjectTable: "jobs")
+        let s12 = Subject(subjectName: "Transport", subjectTable: "transport")
+        let s13 = Subject(subjectName: "Time", subjectTable: "time")
+        let s14 = Subject(subjectName: "Weather", subjectTable: "weather")
+        let s15 = Subject(subjectName: "Clothes", subjectTable: "clothes")
+        let s16 = Subject(subjectName: "Family", subjectTable: "family")
+        let s17 = Subject(subjectName: "My List", subjectTable: "my_list")
 
         
 
@@ -59,7 +58,6 @@ class SubjectsViewController: UIViewController {
         subjects.append(s15)
         subjects.append(s16)
         subjects.append(s17)
-        subjects.append(s18)
 
     }
     
@@ -81,9 +79,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 1 {
-            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsFromAnimals.php"
-        }
+        StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(subjects[indexPath.row].subjectTable!)"
         
         performSegue(withIdentifier: "toStudyVC", sender: nil)
     }
@@ -92,6 +88,10 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let quizAction = UIContextualAction(style: .normal, title: "Quiz"){
                     (UIContextualAction, view, boolValue) in
+            
+            QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+            QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+            
             
             self.performSegue(withIdentifier: "toQuizVC", sender: nil)
                                 

@@ -27,7 +27,9 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
-    var url123 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsFromAnimals.php"
+    static var url1 = ""
+    static var url2 = ""
+
     
     var sorular = [Word]()
     var yanlisSecenekler = [Word]()
@@ -102,7 +104,7 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     
     
     func loadWords() {
-        AF.request(url123, method: .get).response { response in
+        AF.request(QuizViewController.url1, method: .get).response { response in
             if let data = response.data {
                 do {
                     let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
@@ -140,8 +142,9 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     
     
     func getWrongWords(forWordId wordId: Int) {
-        let urlString = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWord.php?word_id=\(wordId)"
-        AF.request(urlString, method: .get).response { [self] response in
+        let url3 = "\(QuizViewController.url2)&word_id=\(wordId)"
+        print(url3)
+        AF.request(url3, method: .get).response { [self] response in
             if let data = response.data {
                 do {
                     let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
