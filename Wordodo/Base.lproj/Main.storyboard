@@ -368,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="4678.6259541984728" y="-758.45070422535218"/>
         </scene>
-        <!--Ranks View Controller-->
+        <!--Sıralama-->
         <scene sceneID="9d1-Vo-u8V">
             <objects>
                 <viewController id="Rx1-bV-EJZ" customClass="RanksViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
@@ -430,7 +430,7 @@
                             <constraint firstItem="lyq-ay-F60" firstAttribute="centerX" secondItem="sP3-tC-UD4" secondAttribute="centerX" id="srz-XX-uFx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3Kv-Kd-k2b"/>
+                    <navigationItem key="navigationItem" title="Sıralama" id="3Kv-Kd-k2b"/>
                     <connections>
                         <outlet property="tableView" destination="lyq-ay-F60" id="f2T-nZ-WnE"/>
                     </connections>
@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="3753.4351145038167" y="805.63380281690149"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Ayarlar-->
         <scene sceneID="Z6p-YN-ldP">
             <objects>
                 <viewController id="oDv-ci-Mu3" customClass="SettingsViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
@@ -490,7 +490,7 @@
                             <constraint firstItem="CQB-2G-4QR" firstAttribute="centerX" secondItem="AlJ-0d-ZF4" secondAttribute="centerX" id="rVY-Qu-oRg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VCF-DX-CpA"/>
+                    <navigationItem key="navigationItem" title="Ayarlar" id="VCF-DX-CpA"/>
                     <connections>
                         <outlet property="tableView" destination="CQB-2G-4QR" id="ozl-kH-Dge"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toVC" modalPresentationStyle="fullScreen" id="J4K-md-0C9"/>
@@ -537,7 +537,7 @@
             </objects>
             <point key="canvasLocation" x="4617.5572519083971" y="1564.7887323943662"/>
         </scene>
-        <!--Subjects View Controller-->
+        <!--Wordodo-->
         <scene sceneID="zLN-kc-K0d">
             <objects>
                 <viewController id="odO-qP-1Oi" customClass="SubjectsViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
@@ -600,7 +600,10 @@
                             <constraint firstItem="I2t-KL-9u5" firstAttribute="top" secondItem="oYJ-bY-f5q" secondAttribute="top" id="ofN-bD-HUv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uJQ-Jg-tFb"/>
+                    <navigationItem key="navigationItem" title="Wordodo" id="uJQ-Jg-tFb">
+                        <barButtonItem key="leftBarButtonItem" title="No Ads" id="tRT-7s-veK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="A2M-vL-ecX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="I2t-KL-9u5" id="e7u-ES-D31"/>
                         <segue destination="sFN-gq-MmG" kind="show" identifier="toStudyVC" id="x2P-SQ-zVZ"/>
@@ -748,7 +751,7 @@
             </objects>
             <point key="canvasLocation" x="3753.4351145038167" y="-758.45070422535218"/>
         </scene>
-        <!--User Word List View Controller-->
+        <!--Kelime Listem-->
         <scene sceneID="9Fr-SX-ZpN">
             <objects>
                 <viewController id="r8j-Pw-1fb" customClass="UserWordListViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
@@ -838,7 +841,7 @@
                             <constraint firstItem="xwU-4X-39h" firstAttribute="trailing" secondItem="fTj-Hd-eHP" secondAttribute="trailing" id="uwQ-JB-Wz0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A23-0i-0SI">
+                    <navigationItem key="navigationItem" title="Kelime Listem" id="A23-0i-0SI">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Z18-2m-AD4">
                             <connections>
                                 <segue destination="v1m-Gn-QQM" kind="show" id="W1Q-lI-bAg"/>
@@ -971,7 +974,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hvx-lb-xuq"/>
+        <segue reference="J4K-md-0C9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Animals" width="850" height="540"/>
@@ -981,6 +984,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="questionmark" catalog="system" width="94" height="128"/>
         <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

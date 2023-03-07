@@ -18,12 +18,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         let s1 = Setting(settingName: "Profil Bilgileri")
-        let s2 = Setting(settingName: "Reklamları Kaldır")
-        let s3 = Setting(settingName: "Çıkış Yap")
+        let s2 = Setting(settingName: "Çıkış Yap")
         
         settings.append(s1)
         settings.append(s2)
-        settings.append(s3)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -54,7 +52,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "toProfileVC", sender: nil)
         }
         
-        if indexPath.row == 2 {
+        if indexPath.row == 1 {
             do {
                 try Auth.auth().signOut()
                 self.performSegue(withIdentifier: "toVC", sender: nil)
