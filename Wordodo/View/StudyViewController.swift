@@ -8,9 +8,13 @@
 import UIKit
 import Alamofire
 import GoogleMobileAds
+import AVFoundation
 
 class StudyViewController: UIViewController {
+    
+    var audioPlayer: AVPlayer!
 
+    
     var words: [Word] = []
     var currentWordIndex = 0
     var wordCard: WordCardView!
@@ -53,7 +57,13 @@ class StudyViewController: UIViewController {
           self.loadBannerAd()
         })
       }
-
+    
+    
+    @IBAction func playSoundButtonClicked(_ sender: Any) {
+        audioPlayer.play()
+    }
+    
+    
       func loadBannerAd() {
         // Step 2 - Determine the view width to use for the ad width.
         let frame = { () -> CGRect in
@@ -107,7 +117,16 @@ class StudyViewController: UIViewController {
         self.wordCard.wordLabel.text = word.wordEn
         self.wordCard.meaningLabel.text = word.wordTr
         self.wordSentenceTextView.text = word.wordSentence
+        
+        print(word.wordEn!)
+        
+        guard let url = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(word.wordEn!)--_gb_1.mp3") else {
+                print("Invalid URL.")
+                return
+        }
 
+        let playerItem = AVPlayerItem(url: url)
+        audioPlayer = AVPlayer(playerItem: playerItem)
     }
 
     

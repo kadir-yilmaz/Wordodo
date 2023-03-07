@@ -630,8 +630,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="I liked this app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjp-fk-51y">
-                                <rect key="frame" x="16" y="494" width="361" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="I liked this app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjp-fk-51y">
+                                <rect key="frame" x="16" y="508" width="361" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="BCY-aw-s1I"/>
                                     <constraint firstAttribute="width" constant="361" id="ad3-f5-5qf"/>
@@ -661,6 +661,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8m-eE-keI">
+                                <rect key="frame" x="170" y="457" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="speaker.wave.2.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playSoundButtonClicked:" destination="sFN-gq-MmG" eventType="touchUpInside" id="dG1-It-dAi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pzl-GT-Imf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -972,6 +981,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
