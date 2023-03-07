@@ -13,14 +13,9 @@ class ResultViewController: UIViewController {
     var falseCount = 0
     var scoreCount = 0
     
-    
     @IBOutlet weak var trueLabel: UILabel!
-    
     @IBOutlet weak var falseLabel: UILabel!
-    
     @IBOutlet weak var scoreLabel: UILabel!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +28,8 @@ class ResultViewController: UIViewController {
 
     }
     
-    @IBAction func requiz(_ sender: Any) {
+    @IBAction func reQuiz(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    
-
 }

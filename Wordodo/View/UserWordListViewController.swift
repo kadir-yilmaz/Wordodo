@@ -12,11 +12,9 @@ import FirebaseAuth
 class UserWordListViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var tableView: UITableView!
     
     var words = [Word]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +22,12 @@ class UserWordListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadWords()
         tableView.reloadData()
-        
         
     }
     
@@ -77,12 +73,9 @@ class UserWordListViewController: UIViewController {
             }
         }
         
-        
     }
     
 }
-
-
 
 extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +118,6 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
                 }
             }
 
-                                
         }
                 
         return UISwipeActionsConfiguration(actions: [deleteAction])
@@ -151,8 +143,6 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
         
     }
     
-    
-    
 }
 
 extension UserWordListViewController: UISearchBarDelegate {
@@ -162,7 +152,5 @@ extension UserWordListViewController: UISearchBarDelegate {
         
         aramaYap(aramaKelimesi: searchText)
     }
-    
-    
     
 }

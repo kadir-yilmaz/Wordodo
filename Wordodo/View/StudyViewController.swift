@@ -11,21 +11,18 @@ import GoogleMobileAds
 import AVFoundation
 
 class StudyViewController: UIViewController {
+
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var wordOrderLabel: UILabel!
+    @IBOutlet weak var wordSentenceTextView: UITextView!
     
     var audioPlayer: AVPlayer!
 
-    
     var words: [Word] = []
     var currentWordIndex = 0
     var wordCard: WordCardView!
     
     static var url = ""
-
-    @IBOutlet weak var bannerView: GADBannerView!
-    
-    @IBOutlet weak var wordOrderLabel: UILabel!
-    
-    @IBOutlet weak var wordSentenceTextView: UITextView!
     
     override func viewDidLoad()   {
         super.viewDidLoad()
@@ -152,3 +149,4 @@ class StudyViewController: UIViewController {
     }
     
 }
+

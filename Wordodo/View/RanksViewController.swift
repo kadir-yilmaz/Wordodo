@@ -11,7 +11,6 @@ import FirebaseFirestore
 
 class RanksViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
     var users = [User]()

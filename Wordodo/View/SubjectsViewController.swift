@@ -39,9 +39,6 @@ class SubjectsViewController: UIViewController {
         let s16 = Subject(subjectName: "Animals", subjectTable: "animals")
         let s17 = Subject(subjectName: "Insects", subjectTable: "insects")
 
-        
-
-        
         subjects.append(s1)
         subjects.append(s2)
         subjects.append(s3)
@@ -59,7 +56,6 @@ class SubjectsViewController: UIViewController {
         subjects.append(s15)
         subjects.append(s16)
         subjects.append(s17)
-
 
     }
     

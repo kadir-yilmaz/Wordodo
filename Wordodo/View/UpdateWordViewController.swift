@@ -23,8 +23,6 @@ class UpdateWordViewController: UIViewController {
     static var gelenWordTr = ""
     static var gelenWordSentence = ""
 
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +31,6 @@ class UpdateWordViewController: UIViewController {
         wordSentenceTextView.text = UpdateWordViewController.gelenWordSentence
 
     }
-    
     
     @IBAction func updateButtonClicked(_ sender: Any) {
         
@@ -63,9 +60,6 @@ class UpdateWordViewController: UIViewController {
             }
         }
         
-        //navigationController?.popToRootViewController(animated: true)
-
-
     }
     
 }

@@ -18,13 +18,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //overrideUserInterfaceStyle = .dark
-
 
     }
     
-
     @IBAction func signUpButtonClicked(_ sender: Any) {
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { authResult, error in

@@ -11,10 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import GoogleMobileAds
 
-class QuizViewController: UIViewController, GADFullScreenContentDelegate {
-    
-    private var interstitial: GADInterstitialAd?
-
+class QuizViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var trueLabel: UILabel!
@@ -30,8 +27,8 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     static var url1 = ""
     static var url2 = ""
 
-    
     var sorular = [Word]()
+    var secenekler = [Word]()
     var yanlisSecenekler = [Word]()
     var soru = Word()
     
@@ -39,20 +36,22 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     var dogruSayac = 0
     var yanlisSayac = 0
     
-    var secenekler = [Word]()
-    
     var timer = Timer()
     var counter = 60
-    
     var score = 0
+    
+    private var interstitial: GADInterstitialAd?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadWords()
         
+        // sayaç için
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(geriSay), userInfo: nil, repeats: true)
         
+        // reklam için
         let request = GADRequest()
             GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                         request: request,
@@ -77,7 +76,7 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
         if counter == -1 {
             timer.invalidate()
             score = 4 * dogruSayac -  1 * yanlisSayac
-            print(score)
+            
             if let currentUserUid = Auth.auth().currentUser?.uid {
                 let db = Firestore.firestore()
                 let userDocRef = db.collection("users").document(currentUserUid)
@@ -102,27 +101,41 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
         
     }
     
-    
     func loadWords() {
-        AF.request(QuizViewController.url1, method: .get).response { response in
-            if let data = response.data {
-                do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                    if let gelenKelimeListesi = cevap.words {
-                        self.sorular = gelenKelimeListesi
-
-                    }
-                    DispatchQueue.main.async {
-                        self.soruYukle()
-                        
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                    
+        WebService.shared.loadWords(from: QuizViewController.url1) { [weak self] words, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let words = words {
+                self?.sorular = words
+                DispatchQueue.main.async {
+                    self?.soruYukle()
                 }
             }
         }
     }
+
+    func getWrongWords(forWordId wordId: Int) {
+        WebService.shared.getWrongWords(forWordId: wordId, from: QuizViewController.url2) { [weak self] words, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let words = words {
+                self?.yanlisSecenekler = words
+                DispatchQueue.main.async { [weak self] in
+                    self?.secenekler.removeAll()
+                    self?.secenekler.append(self?.yanlisSecenekler[0] ?? Word())
+                    self?.secenekler.append(self?.yanlisSecenekler[1] ?? Word())
+                    self?.secenekler.append(self?.yanlisSecenekler[2] ?? Word())
+                    self?.secenekler.append(self?.soru ?? Word())
+                    self?.secenekler.shuffle()
+                    self?.buttonA.setTitle(self?.secenekler[0].wordTr, for: .normal)
+                    self?.buttonB.setTitle(self?.secenekler[1].wordTr, for: .normal)
+                    self?.buttonC.setTitle(self?.secenekler[2].wordTr, for: .normal)
+                    self?.buttonD.setTitle(self?.secenekler[3].wordTr, for: .normal)
+                }
+            }
+        }
+    }
+
     
     func soruYukle()  {
         trueLabel.text = "Doğru : \(dogruSayac)"
@@ -140,44 +153,6 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
        
     }
     
-    
-    func getWrongWords(forWordId wordId: Int) {
-        let url3 = "\(QuizViewController.url2)&word_id=\(wordId)"
-        AF.request(url3, method: .get).response { [self] response in
-            if let data = response.data {
-                do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                    if let gelenKelimeListesi = cevap.words {
-                        
-                        self.yanlisSecenekler = gelenKelimeListesi
-                        
-                        
-                        DispatchQueue.main.async { [self] in
-                            
-                            self.secenekler.removeAll()
-                            
-                            secenekler.append(yanlisSecenekler[0])
-                            secenekler.append(yanlisSecenekler[1])
-                            secenekler.append(yanlisSecenekler[2])
-                            secenekler.append(soru)
-                            
-                            secenekler.shuffle()
-                            
-                            self.buttonA.setTitle(secenekler[0].wordTr, for: .normal)
-                            self.buttonB.setTitle(secenekler[1].wordTr, for: .normal)
-                            self.buttonC.setTitle(secenekler[2].wordTr, for: .normal)
-                            self.buttonD.setTitle(secenekler[3].wordTr, for: .normal)
-                        }
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-                
-            }
-        }
-    }
-    
-
     
     @IBAction func buttonAClicked(_ sender: Any) {
         dogruKontrol(button: buttonA)
@@ -245,13 +220,12 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
         }
     }
     
-    @IBAction func nextButtonClicked(_ sender: Any) {
-        print("clicked")
-        
-        
-        
-    }
+
     
+}
+
+extension QuizViewController: GADFullScreenContentDelegate {
+        
     /// Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
       print("Ad did fail to present full screen content.")
@@ -266,6 +240,5 @@ class QuizViewController: UIViewController, GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
       print("Ad did dismiss full screen content.")
     }
-    
-    
+
 }
