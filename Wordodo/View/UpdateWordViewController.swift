@@ -18,10 +18,10 @@ class UpdateWordViewController: UIViewController {
     
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
-    static var gelenWordId = 1
-    static var gelenWordEn = ""
-    static var gelenWordTr = ""
-    static var gelenWordSentence = ""
+    static var gelenWordId: Int?
+    static var gelenWordEn: String?
+    static var gelenWordTr: String?
+    static var gelenWordSentence: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class UpdateWordViewController: UIViewController {
                 
         let parameters: [String: Any] = [
             "user_id": Auth.auth().currentUser!.uid,
-            "word_id": wordId,
+            "word_id": wordId!,
             "word_en": wordEn,
             "word_tr": wordTr,
             "word_sentence": wordSentence
@@ -58,6 +58,10 @@ class UpdateWordViewController: UIViewController {
                     print(error.localizedDescription)
                 }
             }
+        }
+        
+        if wordEnTextField.text != "" && wordTrTextField.text != "" {
+            navigationController?.popToRootViewController(animated: true)
         }
         
     }

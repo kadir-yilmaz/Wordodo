@@ -25,10 +25,9 @@ class UserWordListViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         loadWords()
         tableView.reloadData()
-        
     }
     
     func aramaYap(aramaKelimesi:String){
@@ -65,13 +64,13 @@ class UserWordListViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+
                     }
                 } catch {
                     print(error.localizedDescription)
                 }
             }
-        }
-        
+        }        
     }
     
 }

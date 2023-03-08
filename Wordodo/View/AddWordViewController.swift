@@ -11,8 +11,8 @@ import Alamofire
 
 class AddWordViewController: UIViewController {
     
-    @IBOutlet weak var wordEnLabel: UITextField!
-    @IBOutlet weak var wordTrLabel: UITextField!
+    @IBOutlet weak var wordEnTextField: UITextField!
+    @IBOutlet weak var wordTrTextField: UITextField!
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
     override func viewDidLoad() {
@@ -23,8 +23,8 @@ class AddWordViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         
-        let wordEn = wordEnLabel.text
-        let wordTr = wordTrLabel.text
+        let wordEn = wordEnTextField.text
+        let wordTr = wordTrTextField.text
         let wordSentence = wordSentenceTextView.text
         let userId = Auth.auth().currentUser?.uid
         
@@ -54,7 +54,10 @@ class AddWordViewController: UIViewController {
             }
             
         }
-                
+        
+        if wordEnTextField.text != "" && wordTrTextField.text != "" {
+            navigationController?.popToRootViewController(animated: true)
+        }
         
     }
     
