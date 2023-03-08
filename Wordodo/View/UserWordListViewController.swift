@@ -41,12 +41,11 @@ class UserWordListViewController: UIViewController {
                     let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
                     if let gelenKelimeListesi = cevap.words {
                         self.words = gelenKelimeListesi
-                        print(self.words)
+                        print(self.words[0].wordSentence!)
                     }
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
-                        print(self.words)
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -131,7 +130,7 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
             
             UpdateWordViewController.gelenWordEn = self.words[indexPath.row].wordEn!
             UpdateWordViewController.gelenWordTr = self.words[indexPath.row].wordTr!
-            UpdateWordViewController.gelenWordSentence = self.words[indexPath.row].wordSentence!
+            UpdateWordViewController.gelenWordSentence = self.words[indexPath.row].wordSentence ?? ""
             UpdateWordViewController.gelenWordId = Int(self.words[indexPath.row].wordId!)!
 
             self.performSegue(withIdentifier: "toUpdateWordVC", sender: nil)

@@ -17,7 +17,6 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var trueLabel: UILabel!
     @IBOutlet weak var falseLabel: UILabel!
     @IBOutlet weak var wordEnLabel: UILabel!
-    @IBOutlet weak var wordSentenceTextView: UITextView!
     
     @IBOutlet weak var buttonA: UIButton!
     @IBOutlet weak var buttonB: UIButton!
@@ -143,7 +142,6 @@ class QuizViewController: UIViewController {
         
         soru = sorular[soruSayac]
         wordEnLabel.text = soru.wordEn
-        wordSentenceTextView.text = soru.wordSentence
         
         if let wordId = self.soru.wordId, let id = Int(wordId) {
             self.getWrongWords(forWordId: id)

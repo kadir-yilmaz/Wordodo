@@ -11,18 +11,13 @@ import Alamofire
 
 class AddWordViewController: UIViewController {
     
-    
     @IBOutlet weak var wordEnLabel: UITextField!
-    
     @IBOutlet weak var wordTrLabel: UITextField!
-    
-    
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     

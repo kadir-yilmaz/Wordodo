@@ -26,7 +26,6 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        
     }
     
 }
@@ -61,7 +60,5 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
-    
     
 }
