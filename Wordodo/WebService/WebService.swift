@@ -10,9 +10,66 @@ import Alamofire
 import FirebaseAuth
 import FirebaseFirestore
 
+
+
 class WebService {
     
+    
     static let shared = WebService()
+    private init() {}
+    
+    static func fetchWords(url: String, completion: @escaping ([Word]) -> Void) {
+            AF.request(url, method: .get).response { response in
+                if let data = response.data {
+                    do {
+                        let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
+                        if let gelenKelimeListesi = cevap.words {
+                            completion(gelenKelimeListesi)
+                        }
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+
+    // for UserWordListVC
+    func loadWords(completion: @escaping ([Word]?) -> Void) {
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)", method: .get).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
+                    if let gelenKelimeListesi = cevap.words {
+                        completion(gelenKelimeListesi)
+                    } else {
+                        completion(nil)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    func aramaYap(aramaKelimesi: String, completion: @escaping ([Word]?) -> Void) {
+        let parametreler: Parameters = ["word_en": aramaKelimesi,"user_id":Auth.auth().currentUser!.uid]
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/search.php", method: .post,parameters: parametreler).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
+                    if let gelenKelimeListesi = cevap.words {
+                        completion(gelenKelimeListesi)
+                    } else {
+                        completion(nil)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                    completion(nil)
+                }
+            }
+        }
+    }
     
     func loadWords(from url: String, completion: @escaping ([Word]?, Error?) -> Void) {
         AF.request(url, method: .get).response { response in

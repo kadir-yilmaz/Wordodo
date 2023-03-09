@@ -30,48 +30,23 @@ class UserWordListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func aramaYap(aramaKelimesi:String){
-        let parametreler:Parameters = ["word_en": aramaKelimesi,"user_id":Auth.auth().currentUser!.uid] 
-        
-        
-        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/search.php", method: .post,parameters: parametreler).response { response in
-            if let data = response.data {
-                do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                    if let gelenKelimeListesi = cevap.words {
-                        self.words = gelenKelimeListesi
-                        print(self.words[0].wordSentence!)
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } catch {
-                    print(error.localizedDescription)
+    func loadWords()  {
+            WebService.shared.loadWords { [weak self] (words) in
+                if let words = words {
+                    self?.words = words
+                    self?.tableView.reloadData()
                 }
             }
         }
-    }
-    
-    func loadWords()  {
-        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)", method: .get).response { response in
-            if let data = response.data {
-                do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                    if let gelenKelimeListesi = cevap.words {
-                        self.words = gelenKelimeListesi
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-
-                    }
-                } catch {
-                    print(error.localizedDescription)
+        
+        func aramaYap(aramaKelimesi:String){
+            WebService.shared.aramaYap(aramaKelimesi: aramaKelimesi) { [weak self] (words) in
+                if let words = words {
+                    self?.words = words
+                    self?.tableView.reloadData()
                 }
             }
-        }        
-    }
+        }
     
 }
 

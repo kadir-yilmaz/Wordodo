@@ -95,24 +95,16 @@ class StudyViewController: UIViewController {
     
     
     func loadWords()  {
-        AF.request(StudyViewController.url, method: .get).response { response in
-            if let data = response.data {
-                do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                    if let gelenKelimeListesi = cevap.words {
-                        self.words = gelenKelimeListesi
-                    }
-                    self.updateWordCard()
-                    DispatchQueue.main.async {
-                        self.updateWordCard()
-                        self.wordOrderLabel.text = "\(self.currentWordIndex + 1) / \(self.words.count)"
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
+        WebService.fetchWords(url: StudyViewController.url) { (words) in
+            self.words = words
+            self.updateWordCard()
+            DispatchQueue.main.async {
+                self.updateWordCard()
+                self.wordOrderLabel.text = "\(self.currentWordIndex + 1) / \(self.words.count)"
             }
         }
     }
+
     
     func updateWordCard() {
         guard !self.words.isEmpty else {
