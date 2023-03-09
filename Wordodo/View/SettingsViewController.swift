@@ -17,8 +17,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let s1 = Setting(settingName: "Profil Bilgileri")
-        let s2 = Setting(settingName: "Çıkış Yap")
+        let s1 = Setting(settingName: "👤   Profil Bilgileri")
+        let s2 = Setting(settingName: "➡️   Çıkış Yap")
         
         settings.append(s1)
         settings.append(s2)

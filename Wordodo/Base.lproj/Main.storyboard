@@ -595,8 +595,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wordodo" id="uJQ-Jg-tFb">
                         <barButtonItem key="backBarButtonItem" title="Geri" id="6zd-de-kzT"/>
-                        <barButtonItem key="leftBarButtonItem" title="No Ads" id="tRT-7s-veK"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="A2M-vL-ecX"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="I2t-KL-9u5" id="e7u-ES-D31"/>
@@ -987,7 +985,6 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="questionmark" catalog="system" width="94" height="128"/>
         <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
