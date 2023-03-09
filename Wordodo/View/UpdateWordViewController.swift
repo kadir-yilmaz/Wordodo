@@ -11,11 +11,8 @@ import FirebaseAuth
 
 class UpdateWordViewController: UIViewController {
     
-    
     @IBOutlet weak var wordEnTextField: UITextField!
-    
     @IBOutlet weak var wordTrTextField: UITextField!
-    
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
     static var gelenWordId: Int?
@@ -39,30 +36,17 @@ class UpdateWordViewController: UIViewController {
         }
         
         let wordId = UpdateWordViewController.gelenWordId
-                
-        let parameters: [String: Any] = [
-            "user_id": Auth.auth().currentUser!.uid,
-            "word_id": wordId!,
-            "word_en": wordEn,
-            "word_tr": wordTr,
-            "word_sentence": wordSentence
-        ]
         
-        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/updateWord.php", method: .post, parameters: parameters).response { response in
-            if let data = response.data {
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                        print(json)
+        WebService.shared.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, wordId: wordId!) { error in
+                if let error = error {
+                    print("Error updating word: \(error.localizedDescription)")
+                } else {
+                    if !wordEn.isEmpty && !wordTr.isEmpty {
+                        self.navigationController?.popToRootViewController(animated: true)
                     }
-                } catch {
-                    print(error.localizedDescription)
                 }
             }
-        }
-        
-        if wordEnTextField.text != "" && wordTrTextField.text != "" {
-            navigationController?.popToRootViewController(animated: true)
-        }
+         
         
     }
     

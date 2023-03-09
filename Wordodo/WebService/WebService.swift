@@ -7,6 +7,8 @@
 
 import Foundation
 import Alamofire
+import FirebaseAuth
+import FirebaseFirestore
 
 class WebService {
     
@@ -42,5 +44,51 @@ class WebService {
             }
         }
     }
+    
+    func addWord(wordEn: String, wordTr: String, wordSentence: String, userId: String, completion: @escaping (Error?) -> Void) {
+        let urlString = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/insertWord.php"
+        
+        let parameters: [String: Any] = [
+            "word_en": wordEn,
+            "word_tr": wordTr,
+            "word_sentence": wordSentence,
+            "user_id": userId
+        ]
+        
+        AF.request(urlString,method: .post,parameters: parameters).response { response in
+            
+            if let error = response.error {
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+        }
+    }
+
+    
+    func updateWord(wordEn: String, wordTr: String, wordSentence: String, wordId: Int, completion: @escaping (Error?) -> Void) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            completion(NSError(domain: "CurrentUserNotFound", code: 0, userInfo: nil))
+            return
+        }
+        
+        let parameters: [String: Any] = [
+            "user_id": currentUserID,
+            "word_id": wordId,
+            "word_en": wordEn,
+            "word_tr": wordTr,
+            "word_sentence": wordSentence
+        ]
+        
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/updateWord.php", method: .post, parameters: parameters).response { response in
+            if let error = response.error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+
 }
 
