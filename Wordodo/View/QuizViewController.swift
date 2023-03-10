@@ -26,14 +26,14 @@ class QuizViewController: UIViewController {
     static var url1 = ""
     static var url2 = ""
 
-    var sorular = [Word]()
-    var secenekler = [Word]()
-    var yanlisSecenekler = [Word]()
-    var soru = Word()
+    var questions = [Word]()
+    var choices = [Word]()
+    var wrongChoices = [Word]()
+    var question = Word()
     
-    var soruSayac = 0
-    var dogruSayac = 0
-    var yanlisSayac = 0
+    var questionCounter = 0
+    var trueCounter = 0
+    var falseCounter = 0
     
     var timer = Timer()
     var counter = 60
@@ -47,8 +47,7 @@ class QuizViewController: UIViewController {
         
         loadWords()
         
-        // sayaç için
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(geriSay), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         
         // reklam için
         let request = GADRequest()
@@ -67,34 +66,25 @@ class QuizViewController: UIViewController {
 
     }
     
-    @objc func geriSay(){
+    @objc func countDown(){
         
         timeLabel.text = "\(counter)"
         counter -= 1
         
         if counter == -1 {
-            timer.invalidate()
-            score = 4 * dogruSayac -  1 * yanlisSayac
             
-            if let currentUserUid = Auth.auth().currentUser?.uid {
-                let db = Firestore.firestore()
-                let userDocRef = db.collection("users").document(currentUserUid)
-                
-                userDocRef.updateData(["user_score": FieldValue.increment(Int64(score))]) { error in
-                    if let error = error {
-                        print("Error updating user score: \(error.localizedDescription)")
-                    } else {
-                        print("User score updated successfully")
-                    }
-                }
-            } else {
-                print("User is not logged in")
-            }
+            timer.invalidate()
+            
+            score = 4 * trueCounter -  1 * falseCounter
+            
+            WebService.shared.saveScore(score: score)
+            
             if interstitial != nil {
                 interstitial?.present(fromRootViewController: self)
             } else {
               print("Ad wasn't ready")
             }
+            
             performSegue(withIdentifier: "toResultVC", sender: nil)
         }
         
@@ -105,9 +95,9 @@ class QuizViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if let words = words {
-                self?.sorular = words
+                self?.questions = words
                 DispatchQueue.main.async {
-                    self?.soruYukle()
+                    self?.loadQuestion()
                 }
             }
         }
@@ -118,32 +108,35 @@ class QuizViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if let words = words {
-                self?.yanlisSecenekler = words
+                self?.wrongChoices = words
+                
                 DispatchQueue.main.async { [weak self] in
-                    self?.secenekler.removeAll()
-                    self?.secenekler.append(self?.yanlisSecenekler[0] ?? Word())
-                    self?.secenekler.append(self?.yanlisSecenekler[1] ?? Word())
-                    self?.secenekler.append(self?.yanlisSecenekler[2] ?? Word())
-                    self?.secenekler.append(self?.soru ?? Word())
-                    self?.secenekler.shuffle()
-                    self?.buttonA.setTitle(self?.secenekler[0].wordTr, for: .normal)
-                    self?.buttonB.setTitle(self?.secenekler[1].wordTr, for: .normal)
-                    self?.buttonC.setTitle(self?.secenekler[2].wordTr, for: .normal)
-                    self?.buttonD.setTitle(self?.secenekler[3].wordTr, for: .normal)
+                    
+                    self?.choices.removeAll()
+                    self?.choices.append(self?.wrongChoices[0] ?? Word())
+                    self?.choices.append(self?.wrongChoices[1] ?? Word())
+                    self?.choices.append(self?.wrongChoices[2] ?? Word())
+                    self?.choices.append(self?.question ?? Word())
+                    self?.choices.shuffle()
+                    
+                    self?.buttonA.setTitle(self?.choices[0].wordTr, for: .normal)
+                    self?.buttonB.setTitle(self?.choices[1].wordTr, for: .normal)
+                    self?.buttonC.setTitle(self?.choices[2].wordTr, for: .normal)
+                    self?.buttonD.setTitle(self?.choices[3].wordTr, for: .normal)
                 }
             }
         }
     }
 
     
-    func soruYukle()  {
-        trueLabel.text = "Doğru : \(dogruSayac)"
-        falseLabel.text = "Yanlış : \(yanlisSayac)"
+    func loadQuestion()  {
+        trueLabel.text = "Doğru : \(trueCounter)"
+        falseLabel.text = "Yanlış : \(falseCounter)"
         
-        soru = sorular[soruSayac]
-        wordEnLabel.text = soru.wordEn
+        question = questions[questionCounter]
+        wordEnLabel.text = question.wordEn
         
-        if let wordId = self.soru.wordId, let id = Int(wordId) {
+        if let wordId = self.question.wordId, let id = Int(wordId) {
             self.getWrongWords(forWordId: id)
         } else {
             print("wordId değeri nil!")
@@ -153,49 +146,49 @@ class QuizViewController: UIViewController {
     
     
     @IBAction func buttonAClicked(_ sender: Any) {
-        dogruKontrol(button: buttonA)
-        soruSayacKontrol()
+        trueCheck(button: buttonA)
+        questionCounterCheck()
     }
     
     
     @IBAction func buttonBClicked(_ sender: Any) {
-        dogruKontrol(button: buttonB)
-        soruSayacKontrol()
+        trueCheck(button: buttonB)
+        questionCounterCheck()
     }
     
     
     @IBAction func buttonCClicked(_ sender: Any) {
-        dogruKontrol(button: buttonC)
-        soruSayacKontrol()
+        trueCheck(button: buttonC)
+        questionCounterCheck()
     }
     
     
     @IBAction func buttonDClicked(_ sender: Any) {
-        dogruKontrol(button: buttonD)
-        soruSayacKontrol()
+        trueCheck(button: buttonD)
+        questionCounterCheck()
     }
     
-    func dogruKontrol(button:UIButton){
+    func trueCheck(button:UIButton){
         
-        let secilenCevap = button.titleLabel?.text
-        let dogruCevap = soru.wordTr
+        let choice = button.titleLabel?.text
+        let answer = question.wordTr
         
-        if dogruCevap == secilenCevap {
-            dogruSayac += 1
+        if answer == choice {
+            trueCounter += 1
         }else{
-            yanlisSayac += 1
+            falseCounter += 1
         }
         
-        trueLabel.text = "Doğru : \(dogruSayac)"
-        falseLabel.text = "Yanlış : \(yanlisSayac)"
+        trueLabel.text = "Doğru : \(trueCounter)"
+        falseLabel.text = "Yanlış : \(falseCounter)"
         
     }
     
-    func soruSayacKontrol(){
-        soruSayac += 1
+    func questionCounterCheck(){
+        questionCounter += 1
         
-        if soruSayac != sorular.count {
-            soruYukle()
+        if questionCounter != questions.count {
+            loadQuestion()
         }else{
             counter = 0
             performSegue(withIdentifier: "toResultVC", sender: nil)
@@ -211,14 +204,12 @@ class QuizViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResultVC" {
             let destination = segue.destination as! ResultViewController
-            destination.trueCount = dogruSayac
-            destination.falseCount = yanlisSayac
+            destination.trueCount = trueCounter
+            destination.falseCount = falseCounter
             destination.scoreCount = score
 
         }
     }
-    
-
     
 }
 

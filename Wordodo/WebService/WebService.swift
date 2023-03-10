@@ -11,12 +11,10 @@ import FirebaseAuth
 import FirebaseFirestore
 
 
-
 class WebService {
     
-    
-    static let shared = WebService()
     private init() {}
+    static let shared = WebService()
     
     static func fetchWords(url: String, completion: @escaping ([Word]) -> Void) {
             AF.request(url, method: .get).response { response in
@@ -145,6 +143,24 @@ class WebService {
                 completion(nil)
             }
         }
+    }
+    
+    func saveScore(score: Int) {
+        if let currentUserUid = Auth.auth().currentUser?.uid {
+            let db = Firestore.firestore()
+            let userDocRef = db.collection("users").document(currentUserUid)
+            
+            userDocRef.updateData(["user_score": FieldValue.increment(Int64(score))]) { error in
+                if let error = error {
+                    print("Error updating user score: \(error.localizedDescription)")
+                } else {
+                    print("User score updated successfully")
+                }
+            }
+        } else {
+            print("User is not logged in")
+        }
+        
     }
 
 }
