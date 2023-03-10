@@ -15,28 +15,23 @@ class RanksViewController: UIViewController {
     
     var users = [User]()
     
+    let viewModel = RanksViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        let db = Firestore.firestore()
-        db.collection("users").addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print("Error fetching users: \(error?.localizedDescription ?? "Unknown error")")
-                return
+        viewModel.fetchUsers { error in
+            if let error = error {
+                print("Error fetching users: \(error.localizedDescription)")
+            } else {
+                self.users = self.viewModel.users
+                self.tableView.reloadData()
             }
-            
-            self.users = documents.map { document in
-                let data = document.data()
-                let userName = data["user_name"] as? String ?? "Unknown"
-                let userScore = data["user_score"] as? Int ?? 0
-                return User(userName: userName, userScore: userScore)
-            }.sorted(by: { $0.userScore! > $1.userScore! })
-            
-            self.tableView.reloadData()
         }
+
 
     }
 

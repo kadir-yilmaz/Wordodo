@@ -12,19 +12,17 @@ class SettingsViewController: UIViewController {
 
     var settings = [Setting]()
     
+    var viewModel = SettingsViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let s1 = Setting(settingName: "👤   Profil Bilgileri")
-        let s2 = Setting(settingName: "➡️   Çıkış Yap")
-        
-        settings.append(s1)
-        settings.append(s2)
-
         tableView.delegate = self
         tableView.dataSource = self
+        
+        settings = viewModel.fetchSettings()
         
     }
     
