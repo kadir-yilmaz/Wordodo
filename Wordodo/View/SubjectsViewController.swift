@@ -13,8 +13,9 @@ class SubjectsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var subjects = [Subject]()
+    var viewModel = SubjectsViewModel()
     
+    var subjects = [Subject]()
     var colorArray = [UIColor]()
 
     
@@ -24,42 +25,8 @@ class SubjectsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let s1 = Subject(subjectName: "My List", subjectTable: "user_table")
-        let s2 = Subject(subjectName: "Verbs", subjectTable: "verbs")
-        let s3 = Subject(subjectName: "Phrasal Verbs", subjectTable: "phrasal_verbs")
-        let s4 = Subject(subjectName: "Idioms", subjectTable: "idioms")
-        let s5 = Subject(subjectName: "Fruits", subjectTable: "fruits")
-        let s6 = Subject(subjectName: "Vegetables", subjectTable: "vegetables")
-        let s7 = Subject(subjectName: "Body", subjectTable: "body")
-        let s8 = Subject(subjectName: "Jobs", subjectTable: "jobs")
-        let s9 = Subject(subjectName: "Time", subjectTable: "time")
-        let s10 = Subject(subjectName: "Clothes", subjectTable: "clothes")
-        let s11 = Subject(subjectName: "Animals", subjectTable: "animals")
-        let s12 = Subject(subjectName: "Insects", subjectTable: "insects")
-        let s13 = Subject(subjectName: "Colors", subjectTable: "colors")
-
-        subjects.append(s1)
-        subjects.append(s2)
-        subjects.append(s3)
-        subjects.append(s4)
-        subjects.append(s5)
-        subjects.append(s6)
-        subjects.append(s7)
-        subjects.append(s8)
-        subjects.append(s9)
-        subjects.append(s10)
-        subjects.append(s11)
-        subjects.append(s12)
-        subjects.append(s13)
-        
-        self.colorArray = [
-            UIColor(red: 123/255, green: 131/255, blue: 198/255, alpha: 1.0),
-            UIColor.systemPink,
-            UIColor.green,
-            UIColor.cyan,
-            UIColor.yellow,
-            UIColor.brown,
-        ]
+        subjects = viewModel.getSubjects()
+        colorArray = viewModel.getColorArray()
 
 
     }

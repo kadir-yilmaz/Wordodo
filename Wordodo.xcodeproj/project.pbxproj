@@ -38,6 +38,7 @@
 		11B6B34129A979890015D8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B34029A979890015D8ED /* GoogleService-Info.plist */; };
 		11B6B34329A98DBD0015D8ED /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */; };
 		11B6B34529A990DA0015D8ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B34429A990DA0015D8ED /* SettingsViewController.swift */; };
+		11C9A24429BB6F180047054A /* SubjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A24329BB6F180047054A /* SubjectsViewModel.swift */; };
 		11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50829AF735E002E2862 /* StudyViewController.swift */; };
 		11D1F50B29AF74B8002E2862 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50A29AF74B8002E2862 /* WordCardView.swift */; };
 		731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */; };
@@ -97,6 +98,7 @@
 		11B6B34029A979890015D8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		11B6B34429A990DA0015D8ED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11C9A24329BB6F180047054A /* SubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewModel.swift; sourceTree = "<group>"; };
 		11D1F50829AF735E002E2862 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		11D1F50A29AF74B8002E2862 /* WordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardView.swift; sourceTree = "<group>"; };
 		227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,13 +183,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		119BDB3E29AE9D7E00656EA1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		11B6B30429A92A970015D8ED = {
 			isa = PBXGroup;
 			children = (
@@ -213,10 +208,10 @@
 		11B6B30F29A92A970015D8ED /* Wordodo */ = {
 			isa = PBXGroup;
 			children = (
+				11C9A24229BB6F020047054A /* ViewModel */,
 				119BDB3B29AE9D5100656EA1 /* WebService */,
 				119BDB3C29AE9D6700656EA1 /* Model */,
 				119BDB3D29AE9D7300656EA1 /* View */,
-				119BDB3E29AE9D7E00656EA1 /* ViewModel */,
 				11B6B31029A92A970015D8ED /* AppDelegate.swift */,
 				11B6B31229A92A970015D8ED /* SceneDelegate.swift */,
 				11B6B31629A92A970015D8ED /* Main.storyboard */,
@@ -243,6 +238,14 @@
 				11B6B33329A92A980015D8ED /* WordodoUITestsLaunchTests.swift */,
 			);
 			path = WordodoUITests;
+			sourceTree = "<group>";
+		};
+		11C9A24229BB6F020047054A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11C9A24329BB6F180047054A /* SubjectsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4A058CF272FA59546D935A16 /* Pods */ = {
@@ -531,6 +534,7 @@
 				119BDB3A29AE9D4100656EA1 /* WebService.swift in Sources */,
 				1140D3C129B4BDE400D375DF /* Setting.swift in Sources */,
 				1140D3C529B4C51000D375DF /* ProfileViewController.swift in Sources */,
+				11C9A24429BB6F180047054A /* SubjectsViewModel.swift in Sources */,
 				119BDB4429AEABEA00656EA1 /* SubjectTableViewCell.swift in Sources */,
 				11B6B31329A92A970015D8ED /* SceneDelegate.swift in Sources */,
 			);
