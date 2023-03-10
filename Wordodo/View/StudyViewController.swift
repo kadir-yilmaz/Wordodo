@@ -16,6 +16,8 @@ class StudyViewController: UIViewController {
     @IBOutlet weak var wordOrderLabel: UILabel!
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
+    var viewModel = StudyViewModel()
+    
     var audioPlayer: AVPlayer!
 
     var words: [Word] = []
@@ -23,7 +25,7 @@ class StudyViewController: UIViewController {
     var wordCard: WordCardView!
     
     static var url = ""
-    var audioUrl = URL(string: "")
+    static var audioUrl = URL(string: "")
     
     override func viewDidLoad()   {
         super.viewDidLoad()
@@ -58,15 +60,10 @@ class StudyViewController: UIViewController {
     
     
     @IBAction func playSoundButtonClicked(_ sender: Any) {
-        playSound()
+        viewModel.playSound()
     }
     
-    func playSound(){
-
-        let playerItem = AVPlayerItem(url: audioUrl!)
-        audioPlayer = AVPlayer(playerItem: playerItem)
-        audioPlayer.play()
-    }
+    
     
     
       func loadBannerAd() {
@@ -117,7 +114,7 @@ class StudyViewController: UIViewController {
         
         // boşluk url'de %20 ile temsil edilir
         let encodedWordEn = word.wordEn!.replacingOccurrences(of: " ", with: "%20")
-        audioUrl = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(encodedWordEn)--_gb_1.mp3")        
+        StudyViewController.audioUrl = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(encodedWordEn)--_gb_1.mp3")        
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {

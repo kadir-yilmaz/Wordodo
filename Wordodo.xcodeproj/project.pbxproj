@@ -41,6 +41,8 @@
 		11C9A24429BB6F180047054A /* SubjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A24329BB6F180047054A /* SubjectsViewModel.swift */; };
 		11C9A24729BB76750047054A /* RanksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A24629BB76750047054A /* RanksViewModel.swift */; };
 		11C9A24929BB771F0047054A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A24829BB771F0047054A /* SettingsViewModel.swift */; };
+		11C9A25129BB8BE80047054A /* StudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A25029BB8BE80047054A /* StudyViewModel.swift */; };
+		11C9A25329BB8C020047054A /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A25229BB8C020047054A /* QuizViewModel.swift */; };
 		11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50829AF735E002E2862 /* StudyViewController.swift */; };
 		11D1F50B29AF74B8002E2862 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50A29AF74B8002E2862 /* WordCardView.swift */; };
 		731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */; };
@@ -103,6 +105,8 @@
 		11C9A24329BB6F180047054A /* SubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewModel.swift; sourceTree = "<group>"; };
 		11C9A24629BB76750047054A /* RanksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RanksViewModel.swift; sourceTree = "<group>"; };
 		11C9A24829BB771F0047054A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		11C9A25029BB8BE80047054A /* StudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewModel.swift; sourceTree = "<group>"; };
+		11C9A25229BB8C020047054A /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		11D1F50829AF735E002E2862 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		11D1F50A29AF74B8002E2862 /* WordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardView.swift; sourceTree = "<group>"; };
 		227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +251,8 @@
 				11C9A24329BB6F180047054A /* SubjectsViewModel.swift */,
 				11C9A24629BB76750047054A /* RanksViewModel.swift */,
 				11C9A24829BB771F0047054A /* SettingsViewModel.swift */,
+				11C9A25029BB8BE80047054A /* StudyViewModel.swift */,
+				11C9A25229BB8C020047054A /* QuizViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 				119BDB3629AE871300656EA1 /* Subject.swift in Sources */,
 				11B6B31529A92A970015D8ED /* ViewController.swift in Sources */,
 				1140D3BB29B49D5D00D375DF /* RanksViewController.swift in Sources */,
+				11C9A25329BB8C020047054A /* QuizViewModel.swift in Sources */,
 				113C3A9F29B64E7400D1292E /* UpdateWordViewController.swift in Sources */,
 				11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */,
 				113C3A9D29B61E0800D1292E /* AddWordViewController.swift in Sources */,
@@ -553,6 +560,7 @@
 				119BDB4429AEABEA00656EA1 /* SubjectTableViewCell.swift in Sources */,
 				11B6B31329A92A970015D8ED /* SceneDelegate.swift in Sources */,
 				11C9A24929BB771F0047054A /* SettingsViewModel.swift in Sources */,
+				11C9A25129BB8BE80047054A /* StudyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
