@@ -1,10 +1,6 @@
 Wordodo - İngilizce kelime öğrenme uygulaması
 
-Özellikler:
-MVVM mimarisi
-Alamofire
-Firebase(authentication,firestore)
-AdMob
+Özellikler: MVVM mimarisi, Alamofire, Firebase, AdMob
 
 https://user-images.githubusercontent.com/91225339/224505889-ed953f7c-a350-4cfa-b7bd-c3049342ed7a.mp4
 
