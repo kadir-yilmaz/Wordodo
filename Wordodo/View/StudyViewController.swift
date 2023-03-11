@@ -97,7 +97,6 @@ class StudyViewController: UIViewController {
         }
     }
 
-    
     func updateWordCard() {
         guard !self.words.isEmpty else {
             return

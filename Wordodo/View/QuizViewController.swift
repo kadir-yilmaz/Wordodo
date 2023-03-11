@@ -23,6 +23,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
+    
     static var url1 = ""
     static var url2 = ""
 
@@ -35,34 +36,20 @@ class QuizViewController: UIViewController {
     var trueCounter = 0
     var falseCounter = 0
     
-    var timer = Timer()
     var counter = 60
     var score = 0
     
-    private var interstitial: GADInterstitialAd?
-
+    var viewModel = QuizViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.runTimer {
+            self.countDown()
+        }
         loadWords()
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
-        
-        // reklam için
-        let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
-                                        request: request,
-                              completionHandler: { [self] ad, error in
-                                if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
-                                }
-                                interstitial = ad
-                interstitial?.fullScreenContentDelegate = self
-
-                              }
-            )
+        viewModel.loadAd()
 
     }
     
@@ -73,14 +60,14 @@ class QuizViewController: UIViewController {
         
         if counter == -1 {
             
-            timer.invalidate()
+            viewModel.timer.invalidate()
             
             score = 4 * trueCounter -  1 * falseCounter
             
             WebService.shared.saveScore(score: score)
             
-            if interstitial != nil {
-                interstitial?.present(fromRootViewController: self)
+            if viewModel.interstitial != nil {
+                viewModel.interstitial?.present(fromRootViewController: self)
             } else {
               print("Ad wasn't ready")
             }
@@ -128,7 +115,6 @@ class QuizViewController: UIViewController {
         }
     }
 
-    
     func loadQuestion()  {
         trueLabel.text = "Doğru : \(trueCounter)"
         falseLabel.text = "Yanlış : \(falseCounter)"
@@ -143,7 +129,6 @@ class QuizViewController: UIViewController {
         }
        
     }
-    
     
     @IBAction func buttonAClicked(_ sender: Any) {
         trueCheck(button: buttonA)
@@ -192,8 +177,8 @@ class QuizViewController: UIViewController {
         }else{
             counter = 0
             performSegue(withIdentifier: "toResultVC", sender: nil)
-            if interstitial != nil {
-                interstitial?.present(fromRootViewController: self)
+            if viewModel.interstitial != nil {
+                viewModel.interstitial?.present(fromRootViewController: self)
             } else {
               print("Ad wasn't ready")
             }
