@@ -39,6 +39,8 @@ class QuizViewController: UIViewController {
     var counter = 60
     var score = 0
     
+    var unknownWords = [Word]()
+    
     var viewModel = QuizViewModel()
     
     
@@ -162,6 +164,7 @@ class QuizViewController: UIViewController {
             trueCounter += 1
         }else{
             falseCounter += 1
+            unknownWords.append(question)
         }
         
         trueLabel.text = "Doğru : \(trueCounter)"
@@ -192,6 +195,7 @@ class QuizViewController: UIViewController {
             destination.trueCount = trueCounter
             destination.falseCount = falseCounter
             destination.scoreCount = score
+            destination.unknownWords = unknownWords
 
         }
     }

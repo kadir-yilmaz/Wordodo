@@ -203,8 +203,8 @@
                                     <action selector="reQuiz:" destination="RKh-md-srI" eventType="touchUpInside" id="dcp-ef-RsL"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zEC-y9-UuJ">
-                                <rect key="frame" x="46" y="195" width="301" height="132"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zEC-y9-UuJ">
+                                <rect key="frame" x="46" y="195" width="301" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js2-Fr-h8K">
                                         <rect key="frame" x="0.0" y="0.0" width="301" height="24"/>
@@ -213,28 +213,66 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-ad-cnW">
-                                        <rect key="frame" x="0.0" y="54" width="301" height="24"/>
+                                        <rect key="frame" x="0.0" y="44" width="301" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHa-8g-z72">
-                                        <rect key="frame" x="0.0" y="108" width="301" height="24"/>
+                                        <rect key="frame" x="0.0" y="88" width="301" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-PU-wMx">
+                                <rect key="frame" x="16" y="387" width="361" height="263"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="263" id="hUz-SS-sA6"/>
+                                    <constraint firstAttribute="width" constant="361" id="ite-fK-2MA"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bilinemeyen Kelimeler:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afE-8X-lSx">
+                                <rect key="frame" x="81" y="358" width="231" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KSJ-4s-3cN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sonuç" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-qC-sib">
+                                <rect key="frame" x="56" y="125" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cof-pR-nrj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yIO-qC-sib" firstAttribute="centerX" secondItem="zEC-y9-UuJ" secondAttribute="centerX" id="9hK-ii-jUA"/>
+                            <constraint firstItem="zEC-y9-UuJ" firstAttribute="top" secondItem="yIO-qC-sib" secondAttribute="bottom" constant="49" id="BZc-Vs-67N"/>
+                            <constraint firstItem="afE-8X-lSx" firstAttribute="top" secondItem="zEC-y9-UuJ" secondAttribute="bottom" constant="51" id="C3i-jt-b7M"/>
+                            <constraint firstItem="yIO-qC-sib" firstAttribute="top" secondItem="cof-pR-nrj" secondAttribute="top" constant="22" id="D7E-Ih-tqY"/>
                             <constraint firstItem="zEC-y9-UuJ" firstAttribute="centerX" secondItem="Kvi-0K-hX7" secondAttribute="centerX" id="H8L-55-69E"/>
                             <constraint firstItem="zEC-y9-UuJ" firstAttribute="leading" secondItem="cof-pR-nrj" secondAttribute="leading" constant="46" id="Vp8-7t-R4h"/>
+                            <constraint firstItem="qmt-PU-wMx" firstAttribute="leading" secondItem="Kvi-0K-hX7" secondAttribute="leadingMargin" id="WY0-bc-17x"/>
+                            <constraint firstItem="qmt-PU-wMx" firstAttribute="top" secondItem="afE-8X-lSx" secondAttribute="bottom" constant="8" id="ZA2-66-dui"/>
                             <constraint firstItem="cof-pR-nrj" firstAttribute="bottom" secondItem="Xhu-4z-iAA" secondAttribute="bottom" constant="55" id="ZVu-q3-Kok"/>
                             <constraint firstItem="zEC-y9-UuJ" firstAttribute="centerX" secondItem="Xhu-4z-iAA" secondAttribute="centerX" id="aom-8T-iz4"/>
+                            <constraint firstItem="afE-8X-lSx" firstAttribute="centerX" secondItem="qmt-PU-wMx" secondAttribute="centerX" id="gpa-QH-xc4"/>
                             <constraint firstItem="zEC-y9-UuJ" firstAttribute="top" secondItem="cof-pR-nrj" secondAttribute="top" constant="92" id="jPx-7y-60o"/>
+                            <constraint firstItem="afE-8X-lSx" firstAttribute="centerX" secondItem="zEC-y9-UuJ" secondAttribute="centerX" id="odF-fo-8VI"/>
+                            <constraint firstItem="afE-8X-lSx" firstAttribute="leading" secondItem="cof-pR-nrj" secondAttribute="leading" constant="81" id="sdB-9X-NW4"/>
+                            <constraint firstItem="Xhu-4z-iAA" firstAttribute="top" secondItem="qmt-PU-wMx" secondAttribute="bottom" constant="29.666666666666515" id="tGQ-l6-yGg"/>
+                            <constraint firstItem="yIO-qC-sib" firstAttribute="leading" secondItem="cof-pR-nrj" secondAttribute="leading" constant="56" id="uws-BK-eEi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pSv-aS-aeG"/>
@@ -242,11 +280,12 @@
                         <outlet property="falseLabel" destination="Cf7-ad-cnW" id="yxZ-yx-O6g"/>
                         <outlet property="scoreLabel" destination="uHa-8g-z72" id="F2x-9V-0Oc"/>
                         <outlet property="trueLabel" destination="js2-Fr-h8K" id="c9W-l6-xGp"/>
+                        <outlet property="unknownWordsTextView" destination="qmt-PU-wMx" id="nxn-gw-xRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCG-t5-201" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5622" y="-758"/>
+            <point key="canvasLocation" x="5620.6106870229005" y="-758.45070422535218"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="3IV-qS-LTP">
@@ -499,7 +538,7 @@
             <objects>
                 <viewController id="GV4-Ng-Lhe" customClass="ProfileViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W3h-nr-d9b">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNu-6k-DL5">

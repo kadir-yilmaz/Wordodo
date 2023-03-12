@@ -13,9 +13,13 @@ class ResultViewController: UIViewController {
     var falseCount = 0
     var scoreCount = 0
     
+    var unknownWords = [Word]()
+
+    
     @IBOutlet weak var trueLabel: UILabel!
     @IBOutlet weak var falseLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var unknownWordsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,13 @@ class ResultViewController: UIViewController {
         trueLabel.text = "Doğru sayısı: \(trueCount)"
         falseLabel.text = "Yanlış sayısı: \(falseCount)"
         scoreLabel.text = "Score: \(scoreCount)"
+        
+        var wordsString = ""
+        for word in unknownWords {
+            let wordString = "\(word.wordEn!) - \(word.wordTr!)\n"
+            wordsString.append(wordString)
+        }
+        unknownWordsTextView.text = wordsString
 
     }
     
