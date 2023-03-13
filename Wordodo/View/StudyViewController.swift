@@ -107,7 +107,7 @@ class StudyViewController: UIViewController {
         self.wordSentenceTextView.text = word.wordSentence
         
         // boşluk url'de %20 ile temsil edilir
-        let encodedWordEn = word.wordEn!.replacingOccurrences(of: " ", with: "%20")
+        let encodedWordEn = word.wordEn!.lowercased().replacingOccurrences(of: " ", with: "%20")
         StudyViewController.audioUrl = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(encodedWordEn)--_gb_1.mp3")        
     }
     

@@ -27,11 +27,11 @@ class SubjectsViewModel {
     ]
 
     private let colorArray = [
-        UIColor(red: 123/255, green: 131/255, blue: 198/255, alpha: 1.0),
         UIColor.systemPink,
+        UIColor.yellow,
         UIColor.green,
         UIColor.cyan,
-        UIColor.yellow,
+        UIColor.magenta,
         UIColor.brown,
     ]
 
