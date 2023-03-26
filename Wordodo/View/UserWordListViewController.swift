@@ -16,6 +16,9 @@ class UserWordListViewController: UIViewController {
     
     var words = [Word]()
     
+    var searchText: String = ""
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,7 @@ class UserWordListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadWords()
         tableView.reloadData()
+        aramaYap(aramaKelimesi: searchText)
     }
     
     func loadWords()  {
@@ -123,6 +127,7 @@ extension UserWordListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("Arama Sonucu : \(searchText)")
         
+        self.searchText = searchText
         aramaYap(aramaKelimesi: searchText)
     }
     

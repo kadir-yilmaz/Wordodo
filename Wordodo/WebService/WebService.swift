@@ -33,7 +33,7 @@ class WebService {
 
     // for UserWordListVC
     func loadWords(completion: @escaping ([Word]?) -> Void) {
-        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)", method: .get).response { response in
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId2.php?user_id=\(Auth.auth().currentUser!.uid)", method: .get).response { response in
             if let data = response.data {
                 do {
                     let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
