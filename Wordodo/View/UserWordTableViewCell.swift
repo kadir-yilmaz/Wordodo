@@ -9,13 +9,27 @@ import UIKit
 
 class UserWordTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var wordEnLabel: UILabel!
+    var wordCard: WordCardView!
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        
+    }
     
-    @IBOutlet weak var wordTrLabel: UILabel!
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        wordCard = WordCardView(frame: CGRect(x: 70, y: 50, width: 250, height: 150))
+        contentView.addSubview(wordCard)
+    }
+    
+    
+    
     
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
-
+    @IBOutlet weak var indexLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

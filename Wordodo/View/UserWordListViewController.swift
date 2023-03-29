@@ -13,6 +13,7 @@ class UserWordListViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+        
     
     var words = [Word]()
     
@@ -27,6 +28,7 @@ class UserWordListViewController: UIViewController {
         searchBar.delegate = self
 
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         loadWords()
@@ -63,9 +65,16 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "userWordCell", for: indexPath) as! UserWordTableViewCell
         
-        cell.wordEnLabel.text = words[indexPath.row].wordEn
-        cell.wordTrLabel.text = words[indexPath.row].wordTr
+        cell.indexLabel.text = "\(indexPath.row + 1)"
+        
+        cell.wordCard.wordLabel.text = words[indexPath.row].wordEn
+        cell.wordCard.meaningLabel.text = words[indexPath.row].wordTr
+        
+        //cell.wordEnLabel.text = words[indexPath.row].wordEn
+       // cell.wordTrLabel.text = words[indexPath.row].wordTr
+        
         cell.wordSentenceTextView.text = words[indexPath.row].wordSentence
+        
             
         return cell
     }
