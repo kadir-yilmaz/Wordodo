@@ -32,7 +32,7 @@ class ResultViewController: UIViewController {
         
         var wordsString = ""
         for word in unknownWords {
-            let wordString = "\(word.wordEn!) - \(word.wordTr!)\n"
+            let wordString = "\(word.wordEn!) = \(word.wordTr!)\n"
             wordsString.append(wordString)
         }
         unknownWordsTextView.text = wordsString

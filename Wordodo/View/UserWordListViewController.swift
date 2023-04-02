@@ -18,7 +18,6 @@ class UserWordListViewController: UIViewController {
     var words = [Word]()
     
     var searchText: String = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +28,8 @@ class UserWordListViewController: UIViewController {
 
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         loadWords()
-        tableView.reloadData()
         aramaYap(aramaKelimesi: searchText)
     }
     
@@ -40,19 +37,20 @@ class UserWordListViewController: UIViewController {
             WebService.shared.loadWords { [weak self] (words) in
                 if let words = words {
                     self?.words = words
-                    self?.tableView.reloadData()
                 }
             }
         }
-        
-        func aramaYap(aramaKelimesi:String){
-            WebService.shared.aramaYap(aramaKelimesi: aramaKelimesi) { [weak self] (words) in
-                if let words = words {
-                    self?.words = words
-                    self?.tableView.reloadData()
+    
+    func aramaYap(aramaKelimesi:String){
+        WebService.shared.aramaYap(aramaKelimesi: aramaKelimesi) { (words) in
+            if let words = words {
+                self.words = words
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         }
+    }
     
 }
 
@@ -66,16 +64,10 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "userWordCell", for: indexPath) as! UserWordTableViewCell
         
         cell.indexLabel.text = "\(indexPath.row + 1)"
-        
         cell.wordCard.wordLabel.text = words[indexPath.row].wordEn
         cell.wordCard.meaningLabel.text = words[indexPath.row].wordTr
-        
-        //cell.wordEnLabel.text = words[indexPath.row].wordEn
-       // cell.wordTrLabel.text = words[indexPath.row].wordTr
-        
         cell.wordSentenceTextView.text = words[indexPath.row].wordSentence
         
-            
         return cell
     }
     
@@ -86,10 +78,6 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
             
             let wordId = Int(self.words[indexPath.row].wordId!)!
             
-            
-            
-            print(Auth.auth().currentUser!.uid)
-
             AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteWord.php?user_id=\(Auth.auth().currentUser!.uid)&word_id=\(wordId)", method: .post).response { response in
                 if let data = response.data {
                     do {
@@ -134,10 +122,9 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
 extension UserWordListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama Sonucu : \(searchText)")
-        
         self.searchText = searchText
         aramaYap(aramaKelimesi: searchText)
     }
+    
     
 }
