@@ -39,8 +39,6 @@ class ResultViewController: UIViewController {
 
     }
     
-    
-    
     @IBAction func reQuiz(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
