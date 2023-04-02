@@ -1,6 +1,0 @@
-framework module Pods_WordodoTests {
-  umbrella header "Pods-WordodoTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_Wordodo {
-  umbrella header "Pods-Wordodo-umbrella.h"
-
-  export *
-  module * { export * }
-}

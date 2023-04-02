@@ -7,7 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */; };
+		112B52F029DA01CF0088C48A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52EF29DA01CF0088C48A /* Alamofire */; };
+		112B52F329DA027B0088C48A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52F229DA027B0088C48A /* FirebaseAnalytics */; };
+		112B52F529DA027B0088C48A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52F429DA027B0088C48A /* FirebaseAnalyticsOnDeviceConversion */; };
+		112B52F729DA027B0088C48A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52F629DA027B0088C48A /* FirebaseAnalyticsSwift */; };
+		112B52F929DA027B0088C48A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52F829DA027B0088C48A /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		112B52FB29DA027B0088C48A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52FA29DA027B0088C48A /* FirebaseAppCheck */; };
+		112B52FD29DA027B0088C48A /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52FC29DA027B0088C48A /* FirebaseAppDistribution-Beta */; };
+		112B52FF29DA027B0088C48A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 112B52FE29DA027B0088C48A /* FirebaseAuth */; };
+		112B530129DA027B0088C48A /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530029DA027B0088C48A /* FirebaseAuthCombine-Community */; };
+		112B530329DA027C0088C48A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530229DA027B0088C48A /* FirebaseCrashlytics */; };
+		112B530529DA027C0088C48A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530429DA027C0088C48A /* FirebaseDatabase */; };
+		112B530729DA027C0088C48A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530629DA027C0088C48A /* FirebaseDatabaseSwift */; };
+		112B530929DA027C0088C48A /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530829DA027C0088C48A /* FirebaseDynamicLinks */; };
+		112B530B29DA027C0088C48A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530A29DA027C0088C48A /* FirebaseFirestore */; };
+		112B530D29DA027C0088C48A /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530C29DA027C0088C48A /* FirebaseFirestoreCombine-Community */; };
+		112B530F29DA027C0088C48A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 112B530E29DA027C0088C48A /* FirebaseFirestoreSwift */; };
+		112B531129DA027C0088C48A /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531029DA027C0088C48A /* FirebaseFunctions */; };
+		112B531329DA027C0088C48A /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531229DA027C0088C48A /* FirebaseFunctionsCombine-Community */; };
+		112B531529DA027C0088C48A /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531429DA027C0088C48A /* FirebaseInAppMessaging-Beta */; };
+		112B531729DA027C0088C48A /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531629DA027C0088C48A /* FirebaseInAppMessagingSwift-Beta */; };
+		112B531929DA027C0088C48A /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531829DA027C0088C48A /* FirebaseInstallations */; };
+		112B531B29DA027C0088C48A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531A29DA027C0088C48A /* FirebaseMessaging */; };
+		112B531D29DA027C0088C48A /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531C29DA027C0088C48A /* FirebasePerformance */; };
+		112B531F29DA027C0088C48A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 112B531E29DA027C0088C48A /* FirebaseRemoteConfig */; };
+		112B532129DA027C0088C48A /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 112B532029DA027C0088C48A /* FirebaseRemoteConfigSwift */; };
+		112B532329DA027C0088C48A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 112B532229DA027C0088C48A /* FirebaseStorage */; };
+		112B532529DA027C0088C48A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 112B532429DA027C0088C48A /* FirebaseStorageCombine-Community */; };
+		112B532829DA08310088C48A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 112B532729DA08310088C48A /* GoogleMobileAds */; };
 		113011DF29B278F80074EF40 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113011DE29B278F80074EF40 /* JSONResponse.swift */; };
 		113C3A9D29B61E0800D1292E /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C3A9C29B61E0800D1292E /* AddWordViewController.swift */; };
 		113C3A9F29B64E7400D1292E /* UpdateWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C3A9E29B64E7400D1292E /* UpdateWordViewController.swift */; };
@@ -45,8 +72,6 @@
 		11C9A25329BB8C020047054A /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A25229BB8C020047054A /* QuizViewModel.swift */; };
 		11D1F50929AF735E002E2862 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50829AF735E002E2862 /* StudyViewController.swift */; };
 		11D1F50B29AF74B8002E2862 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1F50A29AF74B8002E2862 /* WordCardView.swift */; };
-		731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */; };
-		EE9EF19E18FF07E0B97817C0 /* Pods_Wordodo_WordodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +92,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		113011DE29B278F80074EF40 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		113C3A9C29B61E0800D1292E /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		113C3A9E29B64E7400D1292E /* UpdateWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWordViewController.swift; sourceTree = "<group>"; };
@@ -109,14 +133,6 @@
 		11C9A25229BB8C020047054A /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		11D1F50829AF735E002E2862 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		11D1F50A29AF74B8002E2862 /* WordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardView.swift; sourceTree = "<group>"; };
-		227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordodoTests.debug.xcconfig"; path = "Target Support Files/Pods-WordodoTests/Pods-WordodoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordodoTests.release.xcconfig"; path = "Target Support Files/Pods-WordodoTests/Pods-WordodoTests.release.xcconfig"; sourceTree = "<group>"; };
-		7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo.debug.xcconfig"; path = "Target Support Files/Pods-Wordodo/Pods-Wordodo.debug.xcconfig"; sourceTree = "<group>"; };
-		8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wordodo_WordodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo.release.xcconfig"; path = "Target Support Files/Pods-Wordodo/Pods-Wordodo.release.xcconfig"; sourceTree = "<group>"; };
-		FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordodo-WordodoUITests.release.xcconfig"; path = "Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +140,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				731C18FBD60A61014413D3E3 /* Pods_Wordodo.framework in Frameworks */,
+				112B532829DA08310088C48A /* GoogleMobileAds in Frameworks */,
+				112B530F29DA027C0088C48A /* FirebaseFirestoreSwift in Frameworks */,
+				112B52F929DA027B0088C48A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				112B531B29DA027C0088C48A /* FirebaseMessaging in Frameworks */,
+				112B531129DA027C0088C48A /* FirebaseFunctions in Frameworks */,
+				112B52F029DA01CF0088C48A /* Alamofire in Frameworks */,
+				112B52F329DA027B0088C48A /* FirebaseAnalytics in Frameworks */,
+				112B52FF29DA027B0088C48A /* FirebaseAuth in Frameworks */,
+				112B530929DA027C0088C48A /* FirebaseDynamicLinks in Frameworks */,
+				112B530329DA027C0088C48A /* FirebaseCrashlytics in Frameworks */,
+				112B530729DA027C0088C48A /* FirebaseDatabaseSwift in Frameworks */,
+				112B530B29DA027C0088C48A /* FirebaseFirestore in Frameworks */,
+				112B531929DA027C0088C48A /* FirebaseInstallations in Frameworks */,
+				112B531329DA027C0088C48A /* FirebaseFunctionsCombine-Community in Frameworks */,
+				112B531D29DA027C0088C48A /* FirebasePerformance in Frameworks */,
+				112B530D29DA027C0088C48A /* FirebaseFirestoreCombine-Community in Frameworks */,
+				112B530529DA027C0088C48A /* FirebaseDatabase in Frameworks */,
+				112B52FB29DA027B0088C48A /* FirebaseAppCheck in Frameworks */,
+				112B52F529DA027B0088C48A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				112B531F29DA027C0088C48A /* FirebaseRemoteConfig in Frameworks */,
+				112B532329DA027C0088C48A /* FirebaseStorage in Frameworks */,
+				112B531729DA027C0088C48A /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				112B532529DA027C0088C48A /* FirebaseStorageCombine-Community in Frameworks */,
+				112B52F729DA027B0088C48A /* FirebaseAnalyticsSwift in Frameworks */,
+				112B52FD29DA027B0088C48A /* FirebaseAppDistribution-Beta in Frameworks */,
+				112B530129DA027B0088C48A /* FirebaseAuthCombine-Community in Frameworks */,
+				112B531529DA027C0088C48A /* FirebaseInAppMessaging-Beta in Frameworks */,
+				112B532129DA027C0088C48A /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +175,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				071FE60C10F510BD0F0FF53C /* Pods_WordodoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +182,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9EF19E18FF07E0B97817C0 /* Pods_Wordodo_WordodoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,8 +239,6 @@
 				11B6B32629A92A980015D8ED /* WordodoTests */,
 				11B6B33029A92A980015D8ED /* WordodoUITests */,
 				11B6B30E29A92A970015D8ED /* Products */,
-				4A058CF272FA59546D935A16 /* Pods */,
-				84113530FAE0F7BFB3C129FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,29 +307,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		4A058CF272FA59546D935A16 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */,
-				E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */,
-				0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */,
-				FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */,
-				4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */,
-				5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		84113530FAE0F7BFB3C129FA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				227DEAF7A1C79EAFC304AE41 /* Pods_Wordodo.framework */,
-				8993AD0616C163606F38E55E /* Pods_Wordodo_WordodoUITests.framework */,
-				23BD2D1AF5FBB60CD3ABDAE5 /* Pods_WordodoTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,17 +314,45 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11B6B33729A92A980015D8ED /* Build configuration list for PBXNativeTarget "Wordodo" */;
 			buildPhases = (
-				90DE65F5D70BC3F1E5F837B3 /* [CP] Check Pods Manifest.lock */,
 				11B6B30929A92A970015D8ED /* Sources */,
 				11B6B30A29A92A970015D8ED /* Frameworks */,
 				11B6B30B29A92A970015D8ED /* Resources */,
-				8AD1B5B45BA6590D80310AAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Wordodo;
+			packageProductDependencies = (
+				112B52EF29DA01CF0088C48A /* Alamofire */,
+				112B52F229DA027B0088C48A /* FirebaseAnalytics */,
+				112B52F429DA027B0088C48A /* FirebaseAnalyticsOnDeviceConversion */,
+				112B52F629DA027B0088C48A /* FirebaseAnalyticsSwift */,
+				112B52F829DA027B0088C48A /* FirebaseAnalyticsWithoutAdIdSupport */,
+				112B52FA29DA027B0088C48A /* FirebaseAppCheck */,
+				112B52FC29DA027B0088C48A /* FirebaseAppDistribution-Beta */,
+				112B52FE29DA027B0088C48A /* FirebaseAuth */,
+				112B530029DA027B0088C48A /* FirebaseAuthCombine-Community */,
+				112B530229DA027B0088C48A /* FirebaseCrashlytics */,
+				112B530429DA027C0088C48A /* FirebaseDatabase */,
+				112B530629DA027C0088C48A /* FirebaseDatabaseSwift */,
+				112B530829DA027C0088C48A /* FirebaseDynamicLinks */,
+				112B530A29DA027C0088C48A /* FirebaseFirestore */,
+				112B530C29DA027C0088C48A /* FirebaseFirestoreCombine-Community */,
+				112B530E29DA027C0088C48A /* FirebaseFirestoreSwift */,
+				112B531029DA027C0088C48A /* FirebaseFunctions */,
+				112B531229DA027C0088C48A /* FirebaseFunctionsCombine-Community */,
+				112B531429DA027C0088C48A /* FirebaseInAppMessaging-Beta */,
+				112B531629DA027C0088C48A /* FirebaseInAppMessagingSwift-Beta */,
+				112B531829DA027C0088C48A /* FirebaseInstallations */,
+				112B531A29DA027C0088C48A /* FirebaseMessaging */,
+				112B531C29DA027C0088C48A /* FirebasePerformance */,
+				112B531E29DA027C0088C48A /* FirebaseRemoteConfig */,
+				112B532029DA027C0088C48A /* FirebaseRemoteConfigSwift */,
+				112B532229DA027C0088C48A /* FirebaseStorage */,
+				112B532429DA027C0088C48A /* FirebaseStorageCombine-Community */,
+				112B532729DA08310088C48A /* GoogleMobileAds */,
+			);
 			productName = Wordodo;
 			productReference = 11B6B30D29A92A970015D8ED /* Wordodo.app */;
 			productType = "com.apple.product-type.application";
@@ -317,7 +361,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11B6B33A29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoTests" */;
 			buildPhases = (
-				755A690E0588935ACF5A0FAD /* [CP] Check Pods Manifest.lock */,
 				11B6B31F29A92A980015D8ED /* Sources */,
 				11B6B32029A92A980015D8ED /* Frameworks */,
 				11B6B32129A92A980015D8ED /* Resources */,
@@ -336,11 +379,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11B6B33D29A92A980015D8ED /* Build configuration list for PBXNativeTarget "WordodoUITests" */;
 			buildPhases = (
-				F03301BF6E6DC140DA4783C0 /* [CP] Check Pods Manifest.lock */,
 				11B6B32929A92A980015D8ED /* Sources */,
 				11B6B32A29A92A980015D8ED /* Frameworks */,
 				11B6B32B29A92A980015D8ED /* Resources */,
-				5EA1140A38E1F26841B4FBAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,6 +425,11 @@
 				Base,
 			);
 			mainGroup = 11B6B30429A92A970015D8ED;
+			packageReferences = (
+				112B52EE29DA01CF0088C48A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				112B532629DA08310088C48A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 11B6B30E29A92A970015D8ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,109 +468,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5EA1140A38E1F26841B4FBAC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wordodo-WordodoUITests/Pods-Wordodo-WordodoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		755A690E0588935ACF5A0FAD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WordodoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AD1B5B45BA6590D80310AAD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wordodo/Pods-Wordodo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		90DE65F5D70BC3F1E5F837B3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Wordodo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F03301BF6E6DC140DA4783C0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Wordodo-WordodoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11B6B30929A92A970015D8ED /* Sources */ = {
@@ -732,7 +675,6 @@
 		};
 		11B6B33829A92A980015D8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A2C21CF751C59B57504327F /* Pods-Wordodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -762,7 +704,6 @@
 		};
 		11B6B33929A92A980015D8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4967271EE02FB0B31103ECC /* Pods-Wordodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -792,7 +733,6 @@
 		};
 		11B6B33B29A92A980015D8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CC1D49C14C68BC28BF35963 /* Pods-WordodoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -813,7 +753,6 @@
 		};
 		11B6B33C29A92A980015D8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A593EDC30671460B771ECC5 /* Pods-WordodoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -834,7 +773,6 @@
 		};
 		11B6B33E29A92A980015D8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0592AEE516EEAA23409A18F8 /* Pods-Wordodo-WordodoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -853,7 +791,6 @@
 		};
 		11B6B33F29A92A980015D8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD31A7BA54CACC8DEB8CDEA2 /* Pods-Wordodo-WordodoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -910,6 +847,176 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		112B52EE29DA01CF0088C48A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		112B532629DA08310088C48A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		112B52EF29DA01CF0088C48A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52EE29DA01CF0088C48A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		112B52F229DA027B0088C48A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		112B52F429DA027B0088C48A /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		112B52F629DA027B0088C48A /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		112B52F829DA027B0088C48A /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		112B52FA29DA027B0088C48A /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		112B52FC29DA027B0088C48A /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		112B52FE29DA027B0088C48A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		112B530029DA027B0088C48A /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		112B530229DA027B0088C48A /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		112B530429DA027C0088C48A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		112B530629DA027C0088C48A /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		112B530829DA027C0088C48A /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		112B530A29DA027C0088C48A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		112B530C29DA027C0088C48A /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		112B530E29DA027C0088C48A /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		112B531029DA027C0088C48A /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		112B531229DA027C0088C48A /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		112B531429DA027C0088C48A /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		112B531629DA027C0088C48A /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		112B531829DA027C0088C48A /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		112B531A29DA027C0088C48A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		112B531C29DA027C0088C48A /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		112B531E29DA027C0088C48A /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		112B532029DA027C0088C48A /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		112B532229DA027C0088C48A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		112B532429DA027C0088C48A /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B52F129DA027B0088C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		112B532729DA08310088C48A /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112B532629DA08310088C48A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11B6B30529A92A970015D8ED /* Project object */;
 }
