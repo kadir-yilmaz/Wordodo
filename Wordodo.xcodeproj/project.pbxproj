@@ -55,7 +55,7 @@
 		119BDB4429AEABEA00656EA1 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BDB4329AEABEA00656EA1 /* SubjectTableViewCell.swift */; };
 		11B6B31129A92A970015D8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31029A92A970015D8ED /* AppDelegate.swift */; };
 		11B6B31329A92A970015D8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31229A92A970015D8ED /* SceneDelegate.swift */; };
-		11B6B31529A92A970015D8ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31429A92A970015D8ED /* ViewController.swift */; };
+		11B6B31529A92A970015D8ED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6B31429A92A970015D8ED /* SignInViewController.swift */; };
 		11B6B31829A92A970015D8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31629A92A970015D8ED /* Main.storyboard */; };
 		11B6B31A29A92A980015D8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31929A92A980015D8ED /* Assets.xcassets */; };
 		11B6B31D29A92A980015D8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */; };
@@ -113,7 +113,7 @@
 		11B6B30D29A92A970015D8ED /* Wordodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B6B31029A92A970015D8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B6B31229A92A970015D8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11B6B31429A92A970015D8ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11B6B31429A92A970015D8ED /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		11B6B31729A92A970015D8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B6B31929A92A980015D8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B6B31C29A92A980015D8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		119BDB3D29AE9D7300656EA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11B6B31429A92A970015D8ED /* ViewController.swift */,
+				11B6B31429A92A970015D8ED /* SignInViewController.swift */,
 				11B6B34229A98DBD0015D8ED /* SignUpViewController.swift */,
 				119BDB4129AEAA5000656EA1 /* SubjectsViewController.swift */,
 				119BDB4329AEABEA00656EA1 /* SubjectTableViewCell.swift */,
@@ -255,11 +255,14 @@
 		11B6B30F29A92A970015D8ED /* Wordodo */ = {
 			isa = PBXGroup;
 			children = (
-				11C9A24529BB721C0047054A /* Core */,
+				119BDB3B29AE9D5100656EA1 /* WebService */,
 				119BDB3C29AE9D6700656EA1 /* Model */,
 				119BDB3D29AE9D7300656EA1 /* View */,
 				11C9A24229BB6F020047054A /* ViewModel */,
-				119BDB3B29AE9D5100656EA1 /* WebService */,
+				11B6B31029A92A970015D8ED /* AppDelegate.swift */,
+				11B6B31229A92A970015D8ED /* SceneDelegate.swift */,
+				11B6B31629A92A970015D8ED /* Main.storyboard */,
+				11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */,
 				11B6B31929A92A980015D8ED /* Assets.xcassets */,
 				11B6B31E29A92A980015D8ED /* Info.plist */,
 				11B6B34029A979890015D8ED /* GoogleService-Info.plist */,
@@ -294,17 +297,6 @@
 				11C9A25229BB8C020047054A /* QuizViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		11C9A24529BB721C0047054A /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				11B6B31029A92A970015D8ED /* AppDelegate.swift */,
-				11B6B31229A92A970015D8ED /* SceneDelegate.swift */,
-				11B6B31629A92A970015D8ED /* Main.storyboard */,
-				11B6B31B29A92A980015D8ED /* LaunchScreen.storyboard */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,7 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119BDB3629AE871300656EA1 /* Subject.swift in Sources */,
-				11B6B31529A92A970015D8ED /* ViewController.swift in Sources */,
+				11B6B31529A92A970015D8ED /* SignInViewController.swift in Sources */,
 				1140D3BB29B49D5D00D375DF /* RanksViewController.swift in Sources */,
 				11C9A25329BB8C020047054A /* QuizViewModel.swift in Sources */,
 				113C3A9F29B64E7400D1292E /* UpdateWordViewController.swift in Sources */,
@@ -683,11 +675,12 @@
 				DEVELOPMENT_TEAM = Y25UG64XN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wordodo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Ses oynatmak için gerekli izin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,11 +705,12 @@
 				DEVELOPMENT_TEAM = Y25UG64XN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wordodo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Ses oynatmak için gerekli izin.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

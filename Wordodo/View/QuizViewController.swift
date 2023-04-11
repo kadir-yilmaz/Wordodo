@@ -64,7 +64,7 @@ class QuizViewController: UIViewController {
             
             viewModel.timer.invalidate()
             
-            score = 4 * trueCounter -  1 * falseCounter
+            score = 10 * trueCounter -  5 * falseCounter
             
             WebService.shared.saveScore(score: score)
             

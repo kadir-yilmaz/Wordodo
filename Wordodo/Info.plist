@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Ses oynatmak için gerekli izin.</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-1442018505347757~8639658293</string>
 	<key>NSAppTransportSecurity</key>

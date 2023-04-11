@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hesabın yok mu?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5F-jN-NZz">
-                                <rect key="frame" x="131" y="741" width="130" height="21"/>
+                                <rect key="frame" x="131" y="741" width="131" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -539,7 +539,7 @@
             <objects>
                 <viewController id="GV4-Ng-Lhe" customClass="ProfileViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W3h-nr-d9b">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNu-6k-DL5">
@@ -582,23 +582,22 @@
                                 <rect key="frame" x="0.0" y="44" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="studySubjectCell" rowHeight="150" id="hHq-GX-FXK" customClass="SubjectTableViewCell" customModule="Wordodo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="studySubjectCell" rowHeight="125" id="hHq-GX-FXK" customClass="SubjectTableViewCell" customModule="Wordodo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hHq-GX-FXK" id="7j8-ay-okw">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals" translatesAutoresizingMaskIntoConstraints="NO" id="hGU-Cz-RWa">
-                                                    <rect key="frame" x="20" y="11" width="120" height="125"/>
+                                                    <rect key="frame" x="20" y="11" width="120" height="103"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="2kU-be-QWb"/>
-                                                        <constraint firstAttribute="width" constant="120" id="W5g-av-Bln"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kBg-Hv-Nl1"/>
+                                                        <constraint firstAttribute="height" constant="103" id="JOW-Ab-O67"/>
+                                                        <constraint firstAttribute="width" constant="120" id="h56-57-0aB"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-I7-LbA">
-                                                    <rect key="frame" x="148" y="56" width="225" height="34"/>
+                                                    <rect key="frame" x="148" y="44" width="225" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="PbG-fI-6l6"/>
                                                         <constraint firstAttribute="width" constant="225" id="aAt-gS-8gP"/>
@@ -609,11 +608,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RX2-I7-LbA" firstAttribute="leading" secondItem="hGU-Cz-RWa" secondAttribute="trailing" constant="8" id="HRl-g8-Fjo"/>
-                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="RX2-I7-LbA" secondAttribute="top" constant="-45" id="U0i-86-zJU"/>
-                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="leading" secondItem="7j8-ay-okw" secondAttribute="leadingMargin" id="XOL-dV-Bj9"/>
-                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="7j8-ay-okw" secondAttribute="topMargin" id="aID-zV-P3I"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hGU-Cz-RWa" secondAttribute="bottom" constant="3" id="pL9-9l-a9N"/>
+                                                <constraint firstItem="RX2-I7-LbA" firstAttribute="top" secondItem="7j8-ay-okw" secondAttribute="topMargin" constant="33" id="AJN-p5-smi"/>
+                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="top" secondItem="7j8-ay-okw" secondAttribute="topMargin" id="BBv-v2-QNf"/>
+                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="bottom" secondItem="7j8-ay-okw" secondAttribute="bottomMargin" id="MjW-uN-gV3"/>
+                                                <constraint firstItem="RX2-I7-LbA" firstAttribute="leading" secondItem="hGU-Cz-RWa" secondAttribute="trailing" constant="8" symbolic="YES" id="ggx-pA-RLk"/>
+                                                <constraint firstItem="hGU-Cz-RWa" firstAttribute="leading" secondItem="7j8-ay-okw" secondAttribute="leadingMargin" id="sJ3-dT-TIf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -14,7 +14,6 @@ class ResultViewController: UIViewController {
     var scoreCount = 0
     
     var unknownWords = [Word]()
-
     
     @IBOutlet weak var trueLabel: UILabel!
     @IBOutlet weak var falseLabel: UILabel!
