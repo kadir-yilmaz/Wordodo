@@ -26,7 +26,6 @@ class UpdateWordViewController: UIViewController {
         wordEnTextField.text = UpdateWordViewController.gelenWordEn
         wordTrTextField.text = UpdateWordViewController.gelenWordTr
         wordSentenceTextView.text = UpdateWordViewController.gelenWordSentence
-
     }
     
     @IBAction func updateButtonClicked(_ sender: Any) {

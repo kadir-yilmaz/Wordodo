@@ -19,9 +19,20 @@ class UserWordTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        wordCard = WordCardView(frame: CGRect(x: 70, y: 50, width: 250, height: 150))
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        let screenHeight = UIScreen.main.bounds.size.height
+        
+        let cardWidth: CGFloat = screenWidth * 0.7
+        let cardHeight: CGFloat = screenHeight * 0.2
+        
+        let cardX = (screenWidth - cardWidth) / 2
+        let cardY = (screenHeight - cardHeight) / 30
+        
+        wordCard = WordCardView(frame: CGRect(x: cardX, y: cardY, width: cardWidth, height: cardHeight))
         contentView.addSubview(wordCard)
     }
+
     
     
     

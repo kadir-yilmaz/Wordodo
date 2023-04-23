@@ -32,7 +32,16 @@ class StudyViewController: UIViewController {
         
         loadWords()
         
-        wordCard = WordCardView(frame: CGRect(x: 50, y: 200, width: 300, height: 200))
+        let screenWidth = UIScreen.main.bounds.size.width
+        let screenHeight = UIScreen.main.bounds.size.height
+        
+        let cardWidth: CGFloat = screenWidth * 0.7
+        let cardHeight: CGFloat = screenHeight * 0.2
+        
+        let cardX = (screenWidth - cardWidth) / 2
+        let cardY = (screenHeight - cardHeight) / 3.5
+        wordCard = WordCardView(frame: CGRect(x: cardX, y: cardY, width: cardWidth, height: cardHeight))
+        
         view.addSubview(wordCard)
         
         // Step 1 - Create a GADBannerView (in code or interface builder) and set the
