@@ -16,6 +16,9 @@ class StudyViewController: UIViewController {
     @IBOutlet weak var wordOrderLabel: UILabel!
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
+    @IBOutlet weak var slider: UISlider!
+    
+    
     var viewModel = StudyViewModel()
     
     var audioPlayer: AVPlayer!
@@ -58,7 +61,17 @@ class StudyViewController: UIViewController {
         // locked in portrait mode), the banner can be loaded in viewWillAppear.
         loadBannerAd()
       }
-
+    
+    
+    @IBAction func sliderFunc(_ sender: UISlider) {
+        
+        currentWordIndex = Int(sender.value - 1)
+        wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
+        updateWordCard()
+        sender.maximumValue = Float(words.count)
+        
+    }
+    
       override func viewWillTransition(to size: CGSize,
                               with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to:size, with:coordinator)
@@ -123,6 +136,8 @@ class StudyViewController: UIViewController {
     @IBAction func nextButtonClicked(_ sender: Any) {
         if currentWordIndex < words.count - 1 {
                     currentWordIndex += 1
+            slider.maximumValue = Float(words.count)
+            slider.value += 1
                     updateWordCard()
             wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
 
@@ -132,6 +147,8 @@ class StudyViewController: UIViewController {
     @IBAction func previousButtonClicked(_ sender: Any) {
         if currentWordIndex > 0 {
                    currentWordIndex -= 1
+            slider.maximumValue = Float(words.count)
+            slider.value -= 1
                    updateWordCard()
             wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
             

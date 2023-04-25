@@ -62,7 +62,6 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "userWordCell", for: indexPath) as! UserWordTableViewCell
         
-        cell.indexLabel.text = "\(indexPath.row + 1)"
         cell.wordCard.wordLabel.text = words[indexPath.row].wordEn
         cell.wordCard.meaningLabel.text = words[indexPath.row].wordTr
         cell.wordSentenceTextView.text = words[indexPath.row].wordSentence
