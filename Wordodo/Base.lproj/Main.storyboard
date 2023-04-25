@@ -9,38 +9,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-0L-wDg">
-                                <rect key="frame" x="128" y="133" width="174" height="36"/>
+                                <rect key="frame" x="128" y="74" width="174" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" systemColor="systemMintColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-8r-Lvn">
-                                <rect key="frame" x="20" y="369" width="390" height="34"/>
+                                <rect key="frame" x="20" y="310" width="390" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4W-vm-36J">
-                                <rect key="frame" x="20" y="433" width="390" height="34"/>
+                                <rect key="frame" x="20" y="374" width="390" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dodo" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-xO-Ze1">
-                                <rect key="frame" x="146" y="223" width="138" height="100"/>
+                                <rect key="frame" x="146" y="164" width="138" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Dtv-Te-uxa"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zbe-8k-cga">
-                                <rect key="frame" x="150" y="799" width="130" height="54.666666666666629"/>
+                                <rect key="frame" x="150" y="833" width="130" height="54.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabın yok mu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5F-jN-NZz">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.333333333333332"/>
@@ -60,7 +60,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Ez-nHB">
-                                <rect key="frame" x="138" y="505.99999999999994" width="154" height="34.333333333333314"/>
+                                <rect key="frame" x="138" y="447" width="154" height="34.333333333333314"/>
                                 <color key="tintColor" red="0.92143326999999997" green="0.30747812419999998" blue="0.85743796999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Giriş Yap"/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="1950.6976744186047" y="3.218884120171674"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="IZB-u1-VAX">
             <objects>
-                <viewController id="2ey-XO-gxw" customClass="SignUpViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ey-XO-gxw" customClass="SignUpVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GfP-tL-rK1">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,12 +154,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibB-Al-ygO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950.6976744186047" y="804.72103004291853"/>
+            <point key="canvasLocation" x="1951" y="765"/>
         </scene>
-        <!--Update Word View Controller-->
+        <!--Update WordVC-->
         <scene sceneID="GPC-g9-toQ">
             <objects>
-                <viewController id="5tQ-9S-Y57" customClass="UpdateWordViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5tQ-9S-Y57" customClass="UpdateWordVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rAk-Ot-I0d">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,18 +228,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxl-PL-4UT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4615.8139534883721" y="-1477.4678111587984"/>
+            <point key="canvasLocation" x="4648" y="-1478"/>
         </scene>
         <!--Sonuç-->
         <scene sceneID="yFd-FM-SYk">
             <objects>
-                <viewController id="RKh-md-srI" customClass="ResultViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RKh-md-srI" customClass="ResultVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kvi-0K-hX7">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zEC-y9-UuJ">
-                                <rect key="frame" x="115" y="126" width="200" height="112"/>
+                                <rect key="frame" x="115" y="126" width="200" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js2-Fr-h8K">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
@@ -249,12 +249,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-ad-cnW">
                                         <rect key="frame" x="0.0" y="44" width="200" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHa-8g-z72">
-                                        <rect key="frame" x="0.0" y="88" width="200" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -273,7 +267,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bilinemeyen Kelimeler:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afE-8X-lSx">
-                                <rect key="frame" x="96" y="309.66666666666669" width="238" height="24"/>
+                                <rect key="frame" x="96" y="265.66666666666669" width="238" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -309,19 +303,18 @@
                     <navigationItem key="navigationItem" title="Sonuç" id="pSv-aS-aeG"/>
                     <connections>
                         <outlet property="falseLabel" destination="Cf7-ad-cnW" id="yxZ-yx-O6g"/>
-                        <outlet property="scoreLabel" destination="uHa-8g-z72" id="F2x-9V-0Oc"/>
                         <outlet property="trueLabel" destination="js2-Fr-h8K" id="c9W-l6-xGp"/>
                         <outlet property="unknownWordsTextView" destination="qmt-PU-wMx" id="nxn-gw-xRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCG-t5-201" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7282.3255813953483" y="3.8626609442060089"/>
+            <point key="canvasLocation" x="6790" y="-759"/>
         </scene>
-        <!--Quiz View Controller-->
+        <!--QuizVC-->
         <scene sceneID="3IV-qS-LTP">
             <objects>
-                <viewController id="Eaa-he-GaX" customClass="QuizViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eaa-he-GaX" customClass="QuizVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XQo-v8-Ky1">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,84 +420,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDo-br-hna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6396.2790697674418" y="3.8626609442060089"/>
-        </scene>
-        <!--Sıralama-->
-        <scene sceneID="9d1-Vo-u8V">
-            <objects>
-                <viewController id="Rx1-bV-EJZ" customClass="RanksViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sP3-tC-UD4">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-ay-F60">
-                                <rect key="frame" x="0.0" y="44" width="430" height="839"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rankCell" rowHeight="101" id="7EG-XF-15A" customClass="RankTableViewCell" customModule="Wordodo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="430" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7EG-XF-15A" id="mXw-RG-2BC">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="101"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew8-qM-5WA">
-                                                    <rect key="frame" x="20" y="40" width="207" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="207" id="oRZ-o4-M1o"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-Q4-6EC">
-                                                    <rect key="frame" x="255" y="40" width="155" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="155" id="7En-pN-O6m"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ew8-qM-5WA" firstAttribute="leading" secondItem="mXw-RG-2BC" secondAttribute="leadingMargin" id="bQa-xL-zUe"/>
-                                                <constraint firstItem="ew8-qM-5WA" firstAttribute="baseline" secondItem="VKm-Q4-6EC" secondAttribute="baseline" id="q7Q-A4-kbg"/>
-                                                <constraint firstItem="VKm-Q4-6EC" firstAttribute="leading" secondItem="ew8-qM-5WA" secondAttribute="trailing" constant="28" id="qGe-BQ-N4V"/>
-                                                <constraint firstItem="ew8-qM-5WA" firstAttribute="centerY" secondItem="mXw-RG-2BC" secondAttribute="centerY" id="qcg-we-Y8b"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="userNameLabel" destination="ew8-qM-5WA" id="gJF-bP-g20"/>
-                                            <outlet property="userScoreLabel" destination="VKm-Q4-6EC" id="lyj-K4-JHV"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="rnO-sm-ShO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="lyq-ay-F60" firstAttribute="leading" secondItem="rnO-sm-ShO" secondAttribute="leading" id="8lM-CZ-C7E"/>
-                            <constraint firstItem="lyq-ay-F60" firstAttribute="bottom" secondItem="rnO-sm-ShO" secondAttribute="bottom" id="9D0-ct-aQn"/>
-                            <constraint firstItem="lyq-ay-F60" firstAttribute="top" secondItem="rnO-sm-ShO" secondAttribute="top" id="Pi6-3G-Ftv"/>
-                            <constraint firstItem="lyq-ay-F60" firstAttribute="centerX" secondItem="sP3-tC-UD4" secondAttribute="centerX" id="VJB-Sr-qjJ"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="crown.fill" catalog="system" id="CCF-75-vi8"/>
-                    <navigationItem key="navigationItem" title="Sıralama" id="3Kv-Kd-k2b"/>
-                    <connections>
-                        <outlet property="tableView" destination="lyq-ay-F60" id="f2T-nZ-WnE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QuZ-74-UM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3750.6976744186045" y="804.72103004291853"/>
+            <point key="canvasLocation" x="6047" y="-759"/>
         </scene>
         <!--Ayarlar-->
         <scene sceneID="Z6p-YN-ldP">
             <objects>
-                <viewController id="oDv-ci-Mu3" customClass="SettingsViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oDv-ci-Mu3" customClass="SettingsVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AlJ-0d-ZF4">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,16 +477,17 @@
                     <connections>
                         <outlet property="tableView" destination="CQB-2G-4QR" id="ozl-kH-Dge"/>
                         <segue destination="GV4-Ng-Lhe" kind="show" identifier="toProfileVC" id="Cn6-8o-Dlx"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignInVC" modalPresentationStyle="fullScreen" id="q6z-Qh-giy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5H-4n-Wkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752.0930232558139" y="1564.3776824034335"/>
+            <point key="canvasLocation" x="4649" y="765"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="IFw-hy-AOW">
             <objects>
-                <viewController id="GV4-Ng-Lhe" customClass="ProfileViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GV4-Ng-Lhe" customClass="ProfileVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W3h-nr-d9b">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -602,12 +524,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5T-dB-PLJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4617.2093023255811" y="1564.3776824034335"/>
+            <point key="canvasLocation" x="5445" y="765"/>
         </scene>
         <!--Wordodo-->
         <scene sceneID="zLN-kc-K0d">
             <objects>
-                <viewController id="odO-qP-1Oi" customClass="SubjectsViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="odO-qP-1Oi" customClass="SubjectsVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Bp-ym-IIB">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -679,10 +601,10 @@
             </objects>
             <point key="canvasLocation" x="4649.3023255813951" y="3.218884120171674"/>
         </scene>
-        <!--Study View Controller-->
+        <!--StudyVC-->
         <scene sceneID="f4Y-8X-2vX">
             <objects>
-                <viewController id="sFN-gq-MmG" customClass="StudyViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sFN-gq-MmG" customClass="StudyVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ta6-0i-c0e">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -771,12 +693,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGi-md-2pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5515.8139534883721" y="3.218884120171674"/>
+            <point key="canvasLocation" x="5445" y="4"/>
         </scene>
-        <!--Add Word View Controller-->
+        <!--Add WordVC-->
         <scene sceneID="I7x-FK-uUJ">
             <objects>
-                <viewController id="v1m-Gn-QQM" customClass="AddWordViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v1m-Gn-QQM" customClass="AddWordVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6nW-di-xzH">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -848,7 +770,7 @@
         <!--Kelime Listem-->
         <scene sceneID="9Fr-SX-ZpN">
             <objects>
-                <viewController id="r8j-Pw-1fb" customClass="UserWordListViewController" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r8j-Pw-1fb" customClass="UserWordListVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FL-N7-MN2">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -941,7 +863,6 @@
                     <connections>
                         <segue destination="0up-CL-XWe" kind="relationship" relationship="viewControllers" id="McY-ng-17A"/>
                         <segue destination="G3T-UY-omZ" kind="relationship" relationship="viewControllers" id="3qG-U0-hZs"/>
-                        <segue destination="MYA-ke-GbK" kind="relationship" relationship="viewControllers" id="3yJ-Wi-bDO"/>
                         <segue destination="dcO-wf-dAf" kind="relationship" relationship="viewControllers" id="fI5-PQ-a5K"/>
                     </connections>
                 </tabBarController>
@@ -985,7 +906,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkR-hn-Qie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826.7175572519081" y="1564.7887323943662"/>
+            <point key="canvasLocation" x="3751" y="765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ptc-1Q-qJc">
@@ -1006,30 +927,10 @@
             </objects>
             <point key="canvasLocation" x="2826" y="-759"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="Ly7-UQ-WFd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MYA-ke-GbK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UaB-Pj-HrA"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eb2-z2-5xI">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Rx1-bV-EJZ" kind="relationship" relationship="rootViewController" id="46C-TB-fi2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="16o-4J-eYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2826" y="805"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Animals" width="850" height="540"/>
         <image name="Dodo" width="1024" height="1024"/>
-        <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="note.text" catalog="system" width="128" height="107"/>

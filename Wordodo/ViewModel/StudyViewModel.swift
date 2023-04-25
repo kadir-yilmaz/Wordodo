@@ -14,7 +14,7 @@ class StudyViewModel {
     
     func playSound(){
 
-        let playerItem = AVPlayerItem(url: StudyViewController.audioUrl!)
+        let playerItem = AVPlayerItem(url: StudyVC.audioUrl!)
         audioPlayer = AVPlayer(playerItem: playerItem)
         audioPlayer.play()
     }

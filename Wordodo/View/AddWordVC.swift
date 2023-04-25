@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Alamofire
 
-class AddWordViewController: UIViewController {
+class AddWordVC: UIViewController {
     
     @IBOutlet weak var wordEnTextField: UITextField!
     @IBOutlet weak var wordTrTextField: UITextField!

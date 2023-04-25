@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import FirebaseAuth
 
-class UpdateWordViewController: UIViewController {
+class UpdateWordVC: UIViewController {
     
     @IBOutlet weak var wordEnTextField: UITextField!
     @IBOutlet weak var wordTrTextField: UITextField!
@@ -23,9 +23,9 @@ class UpdateWordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wordEnTextField.text = UpdateWordViewController.gelenWordEn
-        wordTrTextField.text = UpdateWordViewController.gelenWordTr
-        wordSentenceTextView.text = UpdateWordViewController.gelenWordSentence
+        wordEnTextField.text = UpdateWordVC.gelenWordEn
+        wordTrTextField.text = UpdateWordVC.gelenWordTr
+        wordSentenceTextView.text = UpdateWordVC.gelenWordSentence
     }
     
     @IBAction func updateButtonClicked(_ sender: Any) {
@@ -34,7 +34,7 @@ class UpdateWordViewController: UIViewController {
             return
         }
         
-        let wordId = UpdateWordViewController.gelenWordId
+        let wordId = UpdateWordVC.gelenWordId
         
         WebService.shared.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, wordId: wordId!) { error in
                 if let error = error {

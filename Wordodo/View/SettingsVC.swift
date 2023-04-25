@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class SettingsViewController: UIViewController {
+class SettingsVC: UIViewController {
 
     var settings = [Setting]()
     
@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     
 }
 
-extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         settings.count
@@ -52,7 +52,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             do {
                 try Auth.auth().signOut()
-                self.performSegue(withIdentifier: "toVC", sender: nil)
+                self.performSegue(withIdentifier: "toSignInVC", sender: nil)
             } catch  {
                 print("error")
             }

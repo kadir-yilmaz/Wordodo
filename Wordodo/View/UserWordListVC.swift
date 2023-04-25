@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import FirebaseAuth
 
-class UserWordListViewController: UIViewController {
+class UserWordListVC: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,8 @@ class UserWordListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadWords()
+        
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
@@ -28,7 +30,8 @@ class UserWordListViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadWords()
+        super.viewDidAppear(animated)
+        
         aramaYap(aramaKelimesi: searchText)
     }
     
@@ -53,7 +56,7 @@ class UserWordListViewController: UIViewController {
     
 }
 
-extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource {
+extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         words.count
     }
@@ -71,25 +74,39 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Sil"){
+        
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Sil"){ [self]
                     (UIContextualAction, view, boolValue) in
             
             let wordId = Int(self.words[indexPath.row].wordId!)!
             
-            AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteWord.php?user_id=\(Auth.auth().currentUser!.uid)&word_id=\(wordId)", method: .post).response { response in
-                if let data = response.data {
-                    do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                            print(json)
-                            self.words.remove(at: indexPath.row)
-                            tableView.reloadData()
+            let alertController = UIAlertController(title: "Sil", message: "\(self.words[indexPath.row].wordEn!) kelimesi silinsin mi?", preferredStyle: .alert)
+            
+            let iptalAction = UIAlertAction(title: "İptal", style: .cancel) { action in
+                
+            }
+            
+            let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
+                AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteWord.php?user_id=\(Auth.auth().currentUser!.uid)&word_id=\(wordId)", method: .post).response { response in
+                    if let data = response.data {
+                        do {
+                            if try JSONSerialization.jsonObject(with: data, options: []) is [String:Any] {
+                                self.words.remove(at: indexPath.row)
+                                tableView.reloadData()
+                            }
+                        } catch {
+                            print(error.localizedDescription)
                         }
-                    } catch {
-                        print(error.localizedDescription)
                     }
                 }
             }
-
+            
+            alertController.addAction(iptalAction)
+            alertController.addAction(evetAction)
+            
+            self.present(alertController, animated: true)
+            
         }
                 
         return UISwipeActionsConfiguration(actions: [deleteAction])
@@ -101,14 +118,13 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
         let updateAction = UIContextualAction(style: .normal, title: "Güncelle"){
                     (UIContextualAction, view, boolValue) in
             
-            UpdateWordViewController.gelenWordEn = self.words[indexPath.row].wordEn!
-            UpdateWordViewController.gelenWordTr = self.words[indexPath.row].wordTr!
-            UpdateWordViewController.gelenWordSentence = self.words[indexPath.row].wordSentence ?? ""
-            UpdateWordViewController.gelenWordId = Int(self.words[indexPath.row].wordId!)!
+            UpdateWordVC.gelenWordEn = self.words[indexPath.row].wordEn!
+            UpdateWordVC.gelenWordTr = self.words[indexPath.row].wordTr!
+            UpdateWordVC.gelenWordSentence = self.words[indexPath.row].wordSentence ?? ""
+            UpdateWordVC.gelenWordId = Int(self.words[indexPath.row].wordId!)!
 
             self.performSegue(withIdentifier: "toUpdateWordVC", sender: nil)
             
-                                
         }
                 
         return UISwipeActionsConfiguration(actions: [updateAction])
@@ -117,7 +133,7 @@ extension UserWordListViewController: UITableViewDelegate, UITableViewDataSource
     
 }
 
-extension UserWordListViewController: UISearchBarDelegate {
+extension UserWordListVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText

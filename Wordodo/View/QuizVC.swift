@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import GoogleMobileAds
 
-class QuizViewController: UIViewController {
+class QuizVC: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var trueLabel: UILabel!
@@ -37,12 +37,10 @@ class QuizViewController: UIViewController {
     var falseCounter = 0
     
     var counter = 60
-    var score = 0
     
     var unknownWords = [Word]()
     
     var viewModel = QuizViewModel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +62,6 @@ class QuizViewController: UIViewController {
             
             viewModel.timer.invalidate()
             
-            score = 10 * trueCounter -  5 * falseCounter
-            
-            WebService.shared.saveScore(score: score)
-            
             if viewModel.interstitial != nil {
                 viewModel.interstitial?.present(fromRootViewController: self)
             } else {
@@ -80,7 +74,7 @@ class QuizViewController: UIViewController {
     }
     
     func loadWords() {
-        WebService.shared.loadWords(from: QuizViewController.url1) { [weak self] words, error in
+        WebService.shared.loadWords(from: QuizVC.url1) { [weak self] words, error in
             if let error = error {
                 print(error.localizedDescription)
             } else if let words = words {
@@ -93,7 +87,7 @@ class QuizViewController: UIViewController {
     }
 
     func getWrongWords(forWordId wordId: Int) {
-        WebService.shared.getWrongWords(forWordId: wordId, from: QuizViewController.url2) { [weak self] words, error in
+        WebService.shared.getWrongWords(forWordId: wordId, from: QuizVC.url2) { [weak self] words, error in
             if let error = error {
                 print(error.localizedDescription)
             } else if let words = words {
@@ -191,10 +185,9 @@ class QuizViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResultVC" {
-            let destination = segue.destination as! ResultViewController
+            let destination = segue.destination as! ResultVC
             destination.trueCount = trueCounter
             destination.falseCount = falseCounter
-            destination.scoreCount = score
             destination.unknownWords = unknownWords
 
         }
@@ -202,7 +195,7 @@ class QuizViewController: UIViewController {
     
 }
 
-extension QuizViewController: GADFullScreenContentDelegate {
+extension QuizVC: GADFullScreenContentDelegate {
         
     /// Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {

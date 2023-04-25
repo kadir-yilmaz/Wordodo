@@ -10,7 +10,7 @@ import Alamofire
 import GoogleMobileAds
 import AVFoundation
 
-class StudyViewController: UIViewController {
+class StudyVC: UIViewController {
 
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var wordOrderLabel: UILabel!
@@ -34,6 +34,7 @@ class StudyViewController: UIViewController {
         super.viewDidLoad()
         
         loadWords()
+
         
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
@@ -60,6 +61,7 @@ class StudyViewController: UIViewController {
         // the safe area is known. If safe area is not a concern (e.g., your app is
         // locked in portrait mode), the banner can be loaded in viewWillAppear.
         loadBannerAd()
+
       }
     
     
@@ -109,7 +111,7 @@ class StudyViewController: UIViewController {
     }
     
     func loadWords()  {
-        WebService.fetchWords(url: StudyViewController.url) { (words) in
+        WebService.fetchWords(url: StudyVC.url) { (words) in
             self.words = words
             self.updateWordCard()
             DispatchQueue.main.async {
@@ -130,7 +132,7 @@ class StudyViewController: UIViewController {
         
         // boşluk url'de %20 ile temsil edilir
         let encodedWordEn = word.wordEn!.lowercased().replacingOccurrences(of: " ", with: "%20")
-        StudyViewController.audioUrl = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(encodedWordEn)--_gb_1.mp3")        
+        StudyVC.audioUrl = URL(string: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/\(encodedWordEn)--_gb_1.mp3")        
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {

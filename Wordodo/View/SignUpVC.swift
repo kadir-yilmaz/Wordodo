@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class SignUpViewController: UIViewController {
+class SignUpVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
             
             let db = Firestore.firestore()
                     let userDocRef = db.collection("users").document(user.uid)
-            userDocRef.setData(["user_id": user.uid, "user_name": "user_\(Int.random(in: 1...100000))", "user_score": 0])
+            userDocRef.setData(["user_id": user.uid, "user_name": "user_\(Int.random(in: 1...100000))"])
             
             
             }

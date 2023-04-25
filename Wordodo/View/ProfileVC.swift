@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ProfileViewController: UIViewController {
+class ProfileVC: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
     

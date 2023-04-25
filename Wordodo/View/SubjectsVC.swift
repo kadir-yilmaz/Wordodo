@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class SubjectsViewController: UIViewController {
+class SubjectsVC: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -33,7 +33,7 @@ class SubjectsViewController: UIViewController {
     
 }
 
-extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
+extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         subjects.count
     }
@@ -51,11 +51,11 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != 0 {
-            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords2.php?table=\(subjects[indexPath.row].subjectTable!)"
+            StudyVC.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords2.php?table=\(subjects[indexPath.row].subjectTable!)"
         }
         
         if indexPath.row == 0 {
-            StudyViewController.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId2.php?user_id=\(Auth.auth().currentUser!.uid)"
+            StudyVC.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId2.php?user_id=\(Auth.auth().currentUser!.uid)"
         }
         
         
@@ -68,13 +68,13 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
                     (UIContextualAction, view, boolValue) in
             
             if indexPath.row != 0 {
-                QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
-                QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+                QuizVC.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
+                QuizVC.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?table=\(self.subjects[indexPath.row].subjectTable!)"
             }
             
             if indexPath.row == 0 {
-                QuizViewController.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
-                QuizViewController.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
+                QuizVC.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
+                QuizVC.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWordsWithId.php?user_id=\(Auth.auth().currentUser!.uid)"
             }
             
             

@@ -144,39 +144,6 @@ class WebService {
             }
         }
     }
-    
-    func saveScore(score: Int) {
-        guard let currentUserUid = Auth.auth().currentUser?.uid else {
-            print("User is not logged in")
-            return
-        }
-        
-        let db = Firestore.firestore()
-        let userDocRef = db.collection("users").document(currentUserUid)
-        
-        userDocRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                if let currentScore = data?["user_score"] as? Int {
-                    if score > currentScore {
-                        userDocRef.updateData(["user_score": score]) { error in
-                            if let error = error {
-                                print("Error updating user score: \(error.localizedDescription)")
-                            } else {
-                                print("User score updated successfully")
-                            }
-                        }
-                    } else {
-                        print("Score is not higher than current score")
-                    }
-                } else {
-                    print("User score data is not available")
-                }
-            } else {
-                print("User document does not exist")
-            }
-        }
-    }
 
 
 }
