@@ -1,6 +1,6 @@
 Wordodo
 
-İster kendi kelime listenizi ekleyip isterse hazır kelime listeleri kullanarak kelime kartları ve quizlerle ingilizce kelime haznenizi genişletebileceksiniz.
+İster kendi kelime listenizi ekleyip isterse hazır kelime listeleri kullanarak kelime kartları ve quizlerle İngilizce kelime haznenizi genişletebileceksiniz.
 
 Özellikler: MVVM mimarisi, Alamofire, Firebase(authentication, firestore), AdMob
 
