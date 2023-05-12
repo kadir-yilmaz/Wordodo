@@ -20,6 +20,8 @@ class UpdateWordVC: UIViewController {
     static var gelenWordTr: String?
     static var gelenWordSentence: String?
 
+    static var listName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,17 +38,16 @@ class UpdateWordVC: UIViewController {
         
         let wordId = UpdateWordVC.gelenWordId
         
-        WebService.shared.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, wordId: wordId!) { error in
+        WebService.shared.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, wordId: wordId!, listName: UpdateWordVC.listName) { error in
                 if let error = error {
                     print("Error updating word: \(error.localizedDescription)")
                 } else {
                     if !wordEn.isEmpty && !wordTr.isEmpty {
                         self.navigationController?.popToRootViewController(animated: true)
                     }
-                }
-            }
+                  }
+        }
          
-        
     }
     
 }

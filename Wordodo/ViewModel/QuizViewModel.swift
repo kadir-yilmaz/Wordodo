@@ -14,7 +14,6 @@ class QuizViewModel  {
     
     var timer = Timer()
 
-    
     func loadAd() {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",

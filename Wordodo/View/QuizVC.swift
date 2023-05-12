@@ -23,7 +23,6 @@ class QuizVC: UIViewController {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
-    
     static var url1 = ""
     static var url2 = ""
 
@@ -48,6 +47,7 @@ class QuizVC: UIViewController {
         viewModel.runTimer {
             self.countDown()
         }
+        
         loadWords()
         viewModel.loadAd()
 
@@ -72,46 +72,43 @@ class QuizVC: UIViewController {
         }
         
     }
-    
+   
     func loadWords() {
-        WebService.shared.loadWords(from: QuizVC.url1) { [weak self] words, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let words = words {
-                self?.questions = words
-                DispatchQueue.main.async {
-                    self?.loadQuestion()
-                }
+        WebService.shared.fetchWords(url: QuizVC.url1) { [weak self] words in
+            self?.questions = words
+            DispatchQueue.main.async {
+                self?.loadQuestion()
             }
         }
     }
 
     func getWrongWords(forWordId wordId: Int) {
-        WebService.shared.getWrongWords(forWordId: wordId, from: QuizVC.url2) { [weak self] words, error in
+        WebService.shared.getWrongWords(forWordId: wordId, from: QuizVC.url2) { words, error in
             if let error = error {
                 print(error.localizedDescription)
             } else if let words = words {
-                self?.wrongChoices = words
+                self.wrongChoices = words
                 
                 DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     
-                    self?.choices.removeAll()
-                    self?.choices.append(self?.wrongChoices[0] ?? Word())
-                    self?.choices.append(self?.wrongChoices[1] ?? Word())
-                    self?.choices.append(self?.wrongChoices[2] ?? Word())
-                    self?.choices.append(self?.question ?? Word())
-                    self?.choices.shuffle()
-                    
-                    self?.buttonA.setTitle(self?.choices[0].wordTr, for: .normal)
-                    self?.buttonB.setTitle(self?.choices[1].wordTr, for: .normal)
-                    self?.buttonC.setTitle(self?.choices[2].wordTr, for: .normal)
-                    self?.buttonD.setTitle(self?.choices[3].wordTr, for: .normal)
+                    self.choices.removeAll()
+                    self.choices.append(self.wrongChoices[0])
+                    self.choices.append(self.wrongChoices[1])
+                    self.choices.append(self.wrongChoices[2])
+                    self.choices.append(self.question)
+                    self.choices.shuffle()
+
+                    self.buttonA.setTitle(self.choices[0].wordTr, for: .normal)
+                    self.buttonB.setTitle(self.choices[1].wordTr, for: .normal)
+                    self.buttonC.setTitle(self.choices[2].wordTr, for: .normal)
+                    self.buttonD.setTitle(self.choices[3].wordTr, for: .normal)
                 }
             }
         }
     }
 
-    func loadQuestion()  {
+    func loadQuestion() {
         trueLabel.text = "Doğru : \(trueCounter)"
         falseLabel.text = "Yanlış : \(falseCounter)"
         
@@ -123,7 +120,6 @@ class QuizVC: UIViewController {
         } else {
             print("wordId değeri nil!")
         }
-       
     }
     
     @IBAction func buttonAClicked(_ sender: Any) {

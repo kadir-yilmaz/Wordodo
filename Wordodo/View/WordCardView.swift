@@ -45,7 +45,7 @@ class WordCardView: UIView {
         meaningLabel.attributedText = attributedString
 
         layer.cornerRadius = 10
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.systemGray6
         layer.borderWidth = 1
         layer.borderColor = UIColor.gray.cgColor
 

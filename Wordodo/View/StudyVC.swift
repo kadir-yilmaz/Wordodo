@@ -33,36 +33,32 @@ class StudyVC: UIViewController {
     override func viewDidLoad()   {
         super.viewDidLoad()
         
-        loadWords()
-
-        
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeight = UIScreen.main.bounds.size.height
         
         let cardWidth: CGFloat = screenWidth * 0.7
         let cardHeight: CGFloat = screenHeight * 0.2
-        
         let cardX = (screenWidth - cardWidth) / 2
         let cardY = (screenHeight - cardHeight) / 3.5
+        
         wordCard = WordCardView(frame: CGRect(x: cardX, y: cardY, width: cardWidth, height: cardHeight))
         
         view.addSubview(wordCard)
         
-        // Step 1 - Create a GADBannerView (in code or interface builder) and set the
-            // ad unit ID on it.
-            bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
-            bannerView.rootViewController = self
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+        bannerView.rootViewController = self
+            
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Note loadBannerAd is called in viewDidAppear as this is the first time that
-        // the safe area is known. If safe area is not a concern (e.g., your app is
-        // locked in portrait mode), the banner can be loaded in viewWillAppear.
+        
+        loadWords()
         loadBannerAd()
 
       }
+    
     
     
     @IBAction func sliderFunc(_ sender: UISlider) {
@@ -88,10 +84,9 @@ class StudyVC: UIViewController {
     }
     
     func loadBannerAd() {
-      // Step 2 - Determine the view width to use for the ad width.
+        
       let frame = { () -> CGRect in
-        // Here safe area is taken into account, hence the view frame is used
-        // after the view has been laid out.
+          
         if #available(iOS 11.0, *) {
           return view.frame.inset(by: view.safeAreaInsets)
         } else {
@@ -99,19 +94,14 @@ class StudyVC: UIViewController {
         }
       }()
       let viewWidth = frame.size.width
-
-      // Step 3 - Get Adaptive GADAdSize and set the ad view.
-      // Here the current interface orientation is used. If the ad is being preloaded
-      // for a future orientation change or different orientation, the function for the
-      // relevant orientation should be used.
+        
       bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
 
-      // Step 4 - Create an ad request and load the adaptive banner ad.
       bannerView.load(GADRequest())
     }
     
     func loadWords()  {
-        WebService.fetchWords(url: StudyVC.url) { (words) in
+        WebService.shared.fetchWords(url: StudyVC.url) { (words) in
             self.words = words
             self.updateWordCard()
             DispatchQueue.main.async {

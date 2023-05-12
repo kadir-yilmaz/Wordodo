@@ -15,13 +15,14 @@ class UserWordListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
         
     var words = [Word]()
+    static var listName = "My List"
+    
+    let userId = Auth.auth().currentUser!.uid
     
     var searchText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadWords()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,18 +34,12 @@ class UserWordListVC: UIViewController {
         super.viewDidAppear(animated)
         
         aramaYap(aramaKelimesi: searchText)
+        print(words.count)
+        
     }
     
-    func loadWords()  {
-            WebService.shared.loadWords { [weak self] (words) in
-                if let words = words {
-                    self?.words = words
-                }
-            }
-        }
-    
     func aramaYap(aramaKelimesi:String){
-        WebService.shared.aramaYap(aramaKelimesi: aramaKelimesi) { (words) in
+        WebService.shared.search(aramaKelimesi: aramaKelimesi, listName: UserWordListVC.listName) { (words) in
             if let words = words {
                 self.words = words
                 DispatchQueue.main.async {
@@ -88,19 +83,20 @@ extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
-                AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteWord.php?user_id=\(Auth.auth().currentUser!.uid)&word_id=\(wordId)", method: .post).response { response in
-                    if let data = response.data {
-                        do {
-                            if try JSONSerialization.jsonObject(with: data, options: []) is [String:Any] {
-                                self.words.remove(at: indexPath.row)
-                                tableView.reloadData()
-                            }
-                        } catch {
+              
+                WebService.shared.deleteWord(user_id: Auth.auth().currentUser!.uid, word_id: Int(wordId), list_name: UserWordListVC.listName) { success, error in
+                        if success {
+                            print("BAŞARILI BAŞARILI BAŞARILI")
+                            self.words.remove(at: indexPath.row)
+                            tableView.reloadData()
+                        } else if let error = error {
+                            print("ERRORRRRRRR")
                             print(error.localizedDescription)
+                            
                         }
                     }
-                }
             }
+                
             
             alertController.addAction(iptalAction)
             alertController.addAction(evetAction)

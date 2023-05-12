@@ -11,7 +11,6 @@ class ResultVC: UIViewController {
 
     var trueCount = 0
     var falseCount = 0
-    var scoreCount = 0
     
     var unknownWords = [Word]()
     

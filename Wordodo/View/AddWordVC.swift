@@ -15,6 +15,8 @@ class AddWordVC: UIViewController {
     @IBOutlet weak var wordTrTextField: UITextField!
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
+    static var listName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +31,7 @@ class AddWordVC: UIViewController {
         
         let wordSentence = wordSentenceTextView.text ?? ""
         
-        WebService.shared.addWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, userId: userId) { error in
+        WebService.shared.addWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, userId: userId, listName: AddWordVC.listName) { error in
             if let error = error {
                 print("Error adding word: \(error.localizedDescription)")
             } else {
