@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxl-PL-4UT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8068" y="-359"/>
+            <point key="canvasLocation" x="7228" y="328"/>
         </scene>
         <!--Sonuç-->
         <scene sceneID="yFd-FM-SYk">
@@ -529,7 +529,7 @@
         <!--Wordodo-->
         <scene sceneID="zLN-kc-K0d">
             <objects>
-                <viewController id="odO-qP-1Oi" customClass="SubjectsVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="odO-qP-1Oi" customClass="ListsVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Bp-ym-IIB">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,7 +681,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="CDe-KN-Wjq">
                             <connections>
                                 <action selector="editButtonClicked:" destination="sFN-gq-MmG" id="Ntq-xa-Ah7"/>
-                                <segue destination="G3T-UY-omZ" kind="show" id="CHe-y1-YyE"/>
+                                <segue destination="r8j-Pw-1fb" kind="show" id="2Pf-v9-o10"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -766,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpW-Z0-31R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8068" y="335"/>
+            <point key="canvasLocation" x="7229" y="-375"/>
         </scene>
         <!--User Word ListVC-->
         <scene sceneID="9Fr-SX-ZpN">
@@ -850,7 +850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AN-oN-4Yp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7134" y="4"/>
+            <point key="canvasLocation" x="6352" y="4"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aOt-om-ZGN">
@@ -908,32 +908,11 @@
             </objects>
             <point key="canvasLocation" x="3751" y="765"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ptc-1Q-qJc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G3T-UY-omZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="note.text" catalog="system" id="CW7-0m-z17"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jff-Nx-djO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sr-WW-Ryr">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="r8j-Pw-1fb" kind="relationship" relationship="rootViewController" id="A5n-92-gQu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MY9-rV-TwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6395" y="4"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Dodo" width="1024" height="1024"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Word: Codable {
+struct Word: Codable {
     
     var wordId: String?
     var wordEn: String?

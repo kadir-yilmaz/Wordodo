@@ -43,7 +43,9 @@ class UpdateWordVC: UIViewController {
                     print("Error updating word: \(error.localizedDescription)")
                 } else {
                     if !wordEn.isEmpty && !wordTr.isEmpty {
-                        self.navigationController?.popToRootViewController(animated: true)
+                        //self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
+
                     }
                   }
         }

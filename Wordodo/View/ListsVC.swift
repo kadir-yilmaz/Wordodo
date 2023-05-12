@@ -8,30 +8,43 @@
 import UIKit
 import FirebaseAuth
 
-class SubjectsVC: UIViewController {
+class ListsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel = SubjectsViewModel()
+    var viewModel = ListsViewModel()
     
-    var subjects = [Subject]()
+    var listNames = [String]()
     var colorArray = [UIColor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         
-        subjects = viewModel.getSubjects()
-        colorArray = viewModel.getColorArray()
+        self.colorArray = self.viewModel.getColorArray()
+      
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadWords()
+        
+    }
+    
+    func loadWords() {
+        WebService.shared.fetchListNames() { listNames in
+            DispatchQueue.main.async {
+                self.listNames = listNames
+                print(self.listNames)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func addButtonClicked(_ sender: Any) {
-        print("VFDVVPJREPBJREPBJPEBJE")
-        print(Auth.auth().currentUser!.uid)
-        
+                        
         let alertController = UIAlertController(title: "Yeni Liste", message: "Eklenecek listenin adını giriniz.", preferredStyle: .alert)
         
         alertController.addTextField { textfield in
@@ -46,7 +59,9 @@ class SubjectsVC: UIViewController {
         }
         
         let tamamAction = UIAlertAction(title: "Kaydet", style: .destructive) { action in
-            
+            let alinanVeri = (alertController.textFields![0] as UITextField).text!
+            self.listNames.append(alinanVeri)
+            self.tableView.reloadData()
         }
         
         alertController.addAction(iptalAction)
@@ -58,15 +73,15 @@ class SubjectsVC: UIViewController {
     
 }
 
-extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
+extension ListsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        subjects.count
+        listNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studySubjectCell", for: indexPath) as! SubjectTableViewCell
         
-        cell.subjectNameLabel.text = "\(subjects[indexPath.row].subjectName!)"
+        cell.subjectNameLabel.text = "\(listNames[indexPath.row])"
         cell.backgroundColor = self.colorArray[indexPath.row % colorArray.count]
             
         return cell
@@ -75,25 +90,14 @@ extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let userId = Auth.auth().currentUser!.uid
-        let listName = subjects[indexPath.row].subjectName!
+        let listName = listNames[indexPath.row]
         UserWordListVC.listName = listName
         AddWordVC.listName = listName
         UpdateWordVC.listName = listName
-
-        if let encodedListName = listName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-            StudyVC.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?user_id=\(userId)&list_name=\(encodedListName)"
-        }
         
+        let encodedListName = listName.urlEncoded
         
-        
-        if indexPath.row == 0 {
-            
-            
-        }
-        
-
-        
-        
+        StudyVC.url = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWords.php?user_id=\(userId)&list_name=\(encodedListName)"
         
         performSegue(withIdentifier: "toStudyVC", sender: nil)
     }
@@ -103,7 +107,7 @@ extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Sil"){
                     (UIContextualAction, view, boolValue) in
             
-            let alertController = UIAlertController(title: "Sil", message: "Liste silinsin mi?", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Sil", message: "\(self.listNames[indexPath.row]) listesi silinsin mi?", preferredStyle: .alert)
             
             let iptalAction = UIAlertAction(title: "İptal", style: .cancel) { action in
                 
@@ -111,6 +115,16 @@ extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
                 
+                WebService.shared.deleteList(user_id: Auth.auth().currentUser!.uid, list_name: self.listNames[indexPath.row]) { success, error in
+                    if success {
+                        print("Liste başarıyla silindi.")
+                        self.listNames.remove(at: indexPath.row)
+                        tableView.reloadData()
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
+
             }
             
             alertController.addAction(iptalAction)
@@ -129,16 +143,12 @@ extension SubjectsVC: UITableViewDelegate, UITableViewDataSource {
                     (UIContextualAction, view, boolValue) in
             
             let userId = Auth.auth().currentUser!.uid
-            let listName = self.subjects[indexPath.row].subjectName!
+            let listName = self.listNames[indexPath.row]
+            let encodedListName = listName.urlEncoded
             
-            print(userId)
-            print(listName)
+            QuizVC.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsRandom.php?user_id=\(userId)&list_name=\(encodedListName)"
             
-            if let encodedListName = listName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-                QuizVC.url1 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getAllWordsRandom.php?user_id=\(userId)&list_name=\(encodedListName)"
-                
-                QuizVC.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?user_id=\(userId)&list_name=\(encodedListName)"
-            }
+            QuizVC.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?user_id=\(userId)&list_name=\(encodedListName)"
             
             self.performSegue(withIdentifier: "toQuizVC", sender: nil)
                                 

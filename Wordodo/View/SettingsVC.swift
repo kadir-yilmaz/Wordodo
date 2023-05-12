@@ -23,7 +23,6 @@ class SettingsVC: UIViewController {
         tableView.dataSource = self
         
         settings = viewModel.fetchSettings()
-        
     }
     
 }

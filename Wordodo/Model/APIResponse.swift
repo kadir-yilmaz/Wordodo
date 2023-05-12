@@ -7,6 +7,7 @@
 
 import Foundation
 
-class JSONResponse: Codable {
+struct APIResponse: Codable {
     var words: [Word]?
+    let list_names: [String]? // gelen JSON dizisinin ismi ile aynı olmalı
 }

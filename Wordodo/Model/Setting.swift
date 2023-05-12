@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Setting {
+struct Setting {
     
     var settingName: String
     

@@ -17,26 +17,46 @@ class WebService {
     private init() {}
     
     func fetchWords(url: String, completion: @escaping ([Word]) -> Void) {
-            AF.request(url, method: .get).response { response in
-                if let data = response.data {
-                    do {
-                        let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
-                        if let gelenKelimeListesi = cevap.words {
-                            completion(gelenKelimeListesi)
-                        }
-                    } catch {
-                        print(error.localizedDescription)
+        AF.request(url, method: .get).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(APIResponse.self, from: data)
+                    if let gelenKelimeListesi = cevap.words {
+                        completion(gelenKelimeListesi)
                     }
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
         }
+    }
     
-    func search(aramaKelimesi: String, listName: String, completion: @escaping ([Word]?) -> Void) {
-        let parametreler: Parameters = ["word_en": aramaKelimesi,"user_id":Auth.auth().currentUser!.uid, "list_name":listName]
-        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/search.php", method: .post,parameters: parametreler).response { response in
+    func fetchListNames(completion: @escaping ([String]) -> Void) {
+        
+        let parametreler: Parameters = ["user_id": Auth.auth().currentUser!.uid]
+        
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/getListNames.php", method: .post, parameters: parametreler).response { response in
             if let data = response.data {
                 do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
+                    let cevap = try JSONDecoder().decode(APIResponse.self, from: data)
+                    if let gelenKelimeListesi = cevap.list_names {
+                        completion(gelenKelimeListesi)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    func search(aramaKelimesi: String, listName: String, completion: @escaping ([Word]?) -> Void) {
+        
+        let parametreler: Parameters = ["word_en": aramaKelimesi, "user_id": Auth.auth().currentUser!.uid, "list_name": listName]
+        
+        AF.request("https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/search.php", method: .post, parameters: parametreler).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(APIResponse.self, from: data)
                     if let gelenKelimeListesi = cevap.words {
                         completion(gelenKelimeListesi)
                     } else {
@@ -55,7 +75,7 @@ class WebService {
         AF.request(urlWithParams, method: .get).response { response in
             if let data = response.data {
                 do {
-                    let cevap = try JSONDecoder().decode(JSONResponse.self, from: data)
+                    let cevap = try JSONDecoder().decode(APIResponse.self, from: data)
                     if let gelenKelimeListesi = cevap.words {
                         completion(gelenKelimeListesi, nil)
                     }
@@ -114,8 +134,7 @@ class WebService {
     
     func deleteWord(user_id: String, word_id: Int, list_name: String, completion: @escaping (Bool, Error?) -> Void) {
         
-        let listName = "My List"
-        let encodedListName = listName.urlEncoded
+        let encodedListName = list_name.urlEncoded
 
         let urlString = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteWord.php?user_id=\(user_id)&word_id=\(word_id)&list_name=\(encodedListName)"
         
@@ -131,6 +150,28 @@ class WebService {
             }
         }
     }
+    
+    func deleteList(user_id: String, list_name: String, completion: @escaping (Bool, Error?) -> Void) {
+        let encodedListName = list_name.urlEncoded
+        let urlString = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/deleteList.php?user_id=\(user_id)&list_name=\(encodedListName)"
+        
+        AF.request(urlString, method: .post).response { response in
+            if let data = response.data {
+                do {
+                    if try JSONSerialization.jsonObject(with: data, options: []) is [String:Any] {
+                        completion(true, nil)
+                    }
+                } catch {
+                    completion(false, error)
+                }
+            }
+        }
+    }
+
+
+
+
+
 
 }
 

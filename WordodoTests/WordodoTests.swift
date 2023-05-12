@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Wordodo
+//@testable import Wordodo
 
 final class WordodoTests: XCTestCase {
 

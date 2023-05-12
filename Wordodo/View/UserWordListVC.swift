@@ -33,15 +33,14 @@ class UserWordListVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        aramaYap(aramaKelimesi: searchText)
-        print(words.count)
-        
+        aramaYap(aramaKelimesi: searchText)        
     }
     
     func aramaYap(aramaKelimesi:String){
         WebService.shared.search(aramaKelimesi: aramaKelimesi, listName: UserWordListVC.listName) { (words) in
             if let words = words {
                 self.words = words
+                print(words.count)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -86,11 +85,9 @@ extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
               
                 WebService.shared.deleteWord(user_id: Auth.auth().currentUser!.uid, word_id: Int(wordId), list_name: UserWordListVC.listName) { success, error in
                         if success {
-                            print("BAŞARILI BAŞARILI BAŞARILI")
                             self.words.remove(at: indexPath.row)
                             tableView.reloadData()
                         } else if let error = error {
-                            print("ERRORRRRRRR")
                             print(error.localizedDescription)
                             
                         }

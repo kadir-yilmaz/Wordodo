@@ -36,7 +36,9 @@ class AddWordVC: UIViewController {
                 print("Error adding word: \(error.localizedDescription)")
             } else {
                 if !wordEn.isEmpty && !wordTr.isEmpty {
-                    self.navigationController?.popToRootViewController(animated: true)
+                    //self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+
                 }
             }
         }

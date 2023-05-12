@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    // boşluk url'de %20 ile temsil edilir
     var urlEncoded: String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self
     }
