@@ -1,7 +1,7 @@
-#Architecture
+# Architecture
 MVVM
 
-#Libraries
+# Libraries
 Alamofire
 Firebase
 AdMob
