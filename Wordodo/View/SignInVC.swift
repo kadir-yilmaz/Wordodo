@@ -13,6 +13,8 @@ class SignInVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var viewModel = SignInViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,24 +26,23 @@ class SignInVC: UIViewController {
                 return
             }
             
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                if let error = error {
-                    self?.makeAlert(titleInput: "Error", messageInput: error.localizedDescription)
-                    return
-                }
-                
-                guard let user = Auth.auth().currentUser else {
-                    return
-                }
-                
+        viewModel.signIn(email: email, password: password) { success, error in
+            guard let user = Auth.auth().currentUser else {
+                return
+            }
+            if success {
                 if user.isEmailVerified {
                     // Kullanıcının hesabı doğrulanmış
-                    self?.performSegue(withIdentifier: "toTabBarVC", sender: nil)
+                    self.performSegue(withIdentifier: "toTabBarVC", sender: nil)
                 } else {
                     // Kullanıcının hesabı henüz doğrulanmamış
-                    self?.makeAlert(titleInput: "Hata", messageInput: "Önce email'i doğrula")
+                    self.makeAlert(titleInput: "Hata", messageInput: "Önce email'i doğrula")
                 }
+            } else if let error = error {
+                // If there was an error, display an alert with the error message.
+                self.makeAlert(titleInput: "Error", messageInput: error)
             }
+        }
     }
     
     func makeAlert(titleInput: String, messageInput: String){
@@ -50,7 +51,6 @@ class SignInVC: UIViewController {
         alert.addAction(okButton)
         self.present(alert, animated: true)
     }
-    
     
 }
 

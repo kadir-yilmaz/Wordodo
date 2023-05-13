@@ -768,10 +768,10 @@
             </objects>
             <point key="canvasLocation" x="7229" y="-375"/>
         </scene>
-        <!--User Word ListVC-->
+        <!--Edit ListVC-->
         <scene sceneID="9Fr-SX-ZpN">
             <objects>
-                <viewController id="r8j-Pw-1fb" customClass="UserWordListVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r8j-Pw-1fb" customClass="EditListVC" customModule="Wordodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FL-N7-MN2">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

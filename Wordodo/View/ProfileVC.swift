@@ -13,22 +13,16 @@ class ProfileVC: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
     
+    var viewModel = ProfileViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Kullanıcının mevcut kullanıcı adını görüntülemek için Firestore'dan verileri alın
-                guard let userId = Auth.auth().currentUser?.uid else {
-                    return
-                }
-                
-                let db = Firestore.firestore()
-                db.collection("users").document(userId).getDocument { (document, error) in
-                    if let document = document, document.exists {
-                        let data = document.data()
-                        let userName = data?["user_name"] as? String ?? ""
-                        self.userNameTextField.text = userName
-                    }
-                }
+        viewModel.fetchUserName { (userName) in
+            self.userNameTextField.text = userName
+        }
+
+
     }
     
 

@@ -9,17 +9,17 @@ import UIKit
 import Alamofire
 import FirebaseAuth
 
-class UserWordListVC: UIViewController {
+class EditListVC: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
         
     var words = [Word]()
     static var listName = "My List"
-    
-    let userId = Auth.auth().currentUser!.uid
-    
     var searchText: String = ""
+    var viewModel = EditListViewModel()
+    let userId = Auth.auth().currentUser!.uid
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class UserWordListVC: UIViewController {
     }
     
     func aramaYap(aramaKelimesi:String){
-        WebService.shared.search(aramaKelimesi: aramaKelimesi, listName: UserWordListVC.listName) { (words) in
+        WebService.shared.search(aramaKelimesi: aramaKelimesi, listName: EditListVC.listName) { (words) in
             if let words = words {
                 self.words = words
                 print(words.count)
@@ -50,7 +50,7 @@ class UserWordListVC: UIViewController {
     
 }
 
-extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
+extension EditListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         words.count
     }
@@ -82,24 +82,22 @@ extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
-              
-                WebService.shared.deleteWord(user_id: Auth.auth().currentUser!.uid, word_id: Int(wordId), list_name: UserWordListVC.listName) { success, error in
-                        if success {
-                            self.words.remove(at: indexPath.row)
-                            tableView.reloadData()
-                        } else if let error = error {
-                            print(error.localizedDescription)
-                            
-                        }
-                    }
-            }
                 
+                self.viewModel.deleteWord(user_id: self.userId, word_id: wordId, list_name: EditListVC.listName) { success, error in
+                    if success {
+                        self.words.remove(at: indexPath.row)
+                        tableView.reloadData()
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                        
+                    }
+                }
+            }
             
             alertController.addAction(iptalAction)
             alertController.addAction(evetAction)
             
             self.present(alertController, animated: true)
-            
         }
                 
         return UISwipeActionsConfiguration(actions: [deleteAction])
@@ -126,7 +124,7 @@ extension UserWordListVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension UserWordListVC: UISearchBarDelegate {
+extension EditListVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText

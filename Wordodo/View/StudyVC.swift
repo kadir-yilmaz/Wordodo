@@ -15,14 +15,10 @@ class StudyVC: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var wordOrderLabel: UILabel!
     @IBOutlet weak var wordSentenceTextView: UITextView!
-    
     @IBOutlet weak var slider: UISlider!
     
-    
     var viewModel = StudyViewModel()
-    
     var audioPlayer: AVPlayer!
-
     var words: [Word] = []
     var currentWordIndex = 0
     var wordCard: WordCardView!
@@ -60,16 +56,11 @@ class StudyVC: UIViewController {
 
       }
     
-    
-    
     @IBAction func sliderFunc(_ sender: UISlider) {
-        
         currentWordIndex = Int(sender.value - 1)
         wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
         updateWordCard()
         sender.maximumValue = Float(words.count)
-        print(listNames)
-        
     }
     
       override func viewWillTransition(to size: CGSize,
@@ -128,23 +119,21 @@ class StudyVC: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         if currentWordIndex < words.count - 1 {
-                    currentWordIndex += 1
+            currentWordIndex += 1
             slider.maximumValue = Float(words.count)
             slider.value += 1
-                    updateWordCard()
+            updateWordCard()
             wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
-
-                }
+        }
     }
     
     @IBAction func previousButtonClicked(_ sender: Any) {
         if currentWordIndex > 0 {
-                   currentWordIndex -= 1
+            currentWordIndex -= 1
             slider.maximumValue = Float(words.count)
             slider.value -= 1
-                   updateWordCard()
+            updateWordCard()
             wordOrderLabel.text = "\(currentWordIndex + 1) / \(words.count)"
-            
         }
     }
     

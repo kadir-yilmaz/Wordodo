@@ -22,6 +22,11 @@ class UpdateWordVC: UIViewController {
 
     static var listName = ""
     
+    var viewModel = UpdateWordViewModel()
+    
+    let userId = Auth.auth().currentUser!.uid
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,16 +43,8 @@ class UpdateWordVC: UIViewController {
         
         let wordId = UpdateWordVC.gelenWordId
         
-        WebService.shared.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, wordId: wordId!, listName: UpdateWordVC.listName) { error in
-                if let error = error {
-                    print("Error updating word: \(error.localizedDescription)")
-                } else {
-                    if !wordEn.isEmpty && !wordTr.isEmpty {
-                        //self.navigationController?.popToRootViewController(animated: true)
-                        self.navigationController?.popViewController(animated: true)
-
-                    }
-                  }
+        viewModel.updateWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, userId: userId, listName: UpdateWordVC.listName, wordId: wordId!) { error in
+            self.navigationController?.popViewController(animated: true)
         }
          
     }

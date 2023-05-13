@@ -15,6 +15,8 @@ class AddWordVC: UIViewController {
     @IBOutlet weak var wordTrTextField: UITextField!
     @IBOutlet weak var wordSentenceTextView: UITextView!
     
+    let userId = Auth.auth().currentUser!.uid
+    let viewModel = AddWordModelViewModel()
     static var listName = ""
     
     override func viewDidLoad() {
@@ -22,28 +24,13 @@ class AddWordVC: UIViewController {
 
     }
     
-    
     @IBAction func saveButtonClicked(_ sender: Any) {
-        
-        guard let wordEn = wordEnTextField.text, let wordTr = wordTrTextField.text, let userId = Auth.auth().currentUser?.uid else {
+        guard let wordEn = wordEnTextField.text, let wordTr = wordTrTextField.text, let wordSentence = wordSentenceTextView.text else {
             return
         }
         
-        let wordSentence = wordSentenceTextView.text ?? ""
-        
-        WebService.shared.addWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, userId: userId, listName: AddWordVC.listName) { error in
-            if let error = error {
-                print("Error adding word: \(error.localizedDescription)")
-            } else {
-                if !wordEn.isEmpty && !wordTr.isEmpty {
-                    //self.navigationController?.popToRootViewController(animated: true)
-                    self.navigationController?.popViewController(animated: true)
-
-                }
-            }
+        viewModel.addWord(wordEn: wordEn, wordTr: wordTr, wordSentence: wordSentence, userId: userId, listName: AddWordVC.listName) { error in
+            self.navigationController?.popViewController(animated: true)
         }
-        
     }
-    
-
 }

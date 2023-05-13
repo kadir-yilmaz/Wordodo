@@ -14,6 +14,8 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var viewModel = SignUpViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,29 +23,16 @@ class SignUpVC: UIViewController {
     
     @IBAction func signUpButtonClicked(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { authResult, error in
-                guard let user = authResult?.user, error == nil else {
-                    self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
-                    return
-                }
-                
-                // Doğrulama e-postasını gönder
-                user.sendEmailVerification { error in
-                    if let error = error {
-                        self.makeAlert(titleInput: "Error", messageInput: error.localizedDescription)
-                        return
-                    }
-                    
-                    // E-posta doğrulama mesajını kullanıcıya göster
-                    self.makeAlert(titleInput: "Email Verification", messageInput: "Verification email sent. Please check your inbox and follow the instructions to verify your email address.")
-                }
-            
-            let db = Firestore.firestore()
-                    let userDocRef = db.collection("users").document(user.uid)
-            userDocRef.setData(["user_id": user.uid, "user_name": "user_\(Int.random(in: 1...100000))"])
-            
-            
+        viewModel.signUp(email: emailTextField.text!, password: passwordTextField.text!) { success, message in
+            if success {
+                // Kayıt işlemi başarılı, kullanıcıya mesaj göster
+                self.makeAlert(titleInput: "Email Verification", messageInput: message ?? "")
+            } else {
+                // Kayıt işlemi başarısız, kullanıcıya hata mesajı göster
+                self.makeAlert(titleInput: "Error", messageInput: message ?? "Error")
             }
+        }
+
     }
     
     func makeAlert(titleInput: String, messageInput: String){
@@ -53,5 +42,4 @@ class SignUpVC: UIViewController {
         self.present(alert, animated: true)
     }
     
-
 }

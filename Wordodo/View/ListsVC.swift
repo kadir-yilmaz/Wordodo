@@ -12,6 +12,7 @@ class ListsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let userId = Auth.auth().currentUser!.uid
     var viewModel = ListsViewModel()
     
     var listNames = [String]()
@@ -24,52 +25,46 @@ class ListsVC: UIViewController {
         tableView.dataSource = self
         
         self.colorArray = self.viewModel.getColorArray()
-      
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadWords()
-        
     }
     
     func loadWords() {
-        WebService.shared.fetchListNames() { listNames in
-            DispatchQueue.main.async {
-                self.listNames = listNames
-                print(self.listNames)
-                self.tableView.reloadData()
-            }
+        viewModel.getListNames { listNames in
+            self.listNames = listNames
+            self.tableView.reloadData()
         }
     }
     
     @IBAction func addButtonClicked(_ sender: Any) {
-                        
+        showAlert()
+    }
+
+    func showAlert() {
         let alertController = UIAlertController(title: "Yeni Liste", message: "Eklenecek listenin adını giriniz.", preferredStyle: .alert)
         
         alertController.addTextField { textfield in
-            
-            textfield.placeholder = "İsim"
-            textfield.keyboardType = .emailAddress
-            
+            textfield.placeholder = "My List"
         }
         
-        let iptalAction = UIAlertAction(title: "İptal", style: .cancel) { action in
-            
-        }
+        let iptalAction = UIAlertAction(title: "İptal", style: .cancel) { action in }
         
-        let tamamAction = UIAlertAction(title: "Kaydet", style: .destructive) { action in
-            let alinanVeri = (alertController.textFields![0] as UITextField).text!
-            self.listNames.append(alinanVeri)
-            self.tableView.reloadData()
+        let kaydetAction = UIAlertAction(title: "Kaydet", style: .destructive) { action in
+            if let alinanVeri = alertController.textFields?.first?.text {
+                self.listNames.append(alinanVeri)
+                self.tableView.reloadData()
+            }
         }
         
         alertController.addAction(iptalAction)
-        alertController.addAction(tamamAction)
+        alertController.addAction(kaydetAction)
         
-        self.present(alertController, animated: true)
-        
+        present(alertController, animated: true, completion: nil)
     }
+
     
 }
 
@@ -89,9 +84,9 @@ extension ListsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let userId = Auth.auth().currentUser!.uid
         let listName = listNames[indexPath.row]
-        UserWordListVC.listName = listName
+        
+        EditListVC.listName = listName
         AddWordVC.listName = listName
         UpdateWordVC.listName = listName
         
@@ -115,7 +110,7 @@ extension ListsVC: UITableViewDelegate, UITableViewDataSource {
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
                 
-                WebService.shared.deleteList(user_id: Auth.auth().currentUser!.uid, list_name: self.listNames[indexPath.row]) { success, error in
+                self.viewModel.deleteList(listName: self.listNames[indexPath.row]) { success, error in
                     if success {
                         print("Liste başarıyla silindi.")
                         self.listNames.remove(at: indexPath.row)
@@ -124,7 +119,6 @@ extension ListsVC: UITableViewDelegate, UITableViewDataSource {
                         print(error.localizedDescription)
                     }
                 }
-
             }
             
             alertController.addAction(iptalAction)
@@ -151,7 +145,6 @@ extension ListsVC: UITableViewDelegate, UITableViewDataSource {
             QuizVC.url2 = "https://kadiryilmazhatay.000webhostapp.com/WordodoWebService/get3WrongWords.php?user_id=\(userId)&list_name=\(encodedListName)"
             
             self.performSegue(withIdentifier: "toQuizVC", sender: nil)
-                                
         }
                 
         return UISwipeActionsConfiguration(actions: [quizAction])

@@ -109,6 +109,7 @@ class WebService {
     }
     
     func updateWord(wordEn: String, wordTr: String, wordSentence: String, wordId: Int, listName: String, completion: @escaping (Error?) -> Void) {
+        
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             completion(NSError(domain: "CurrentUserNotFound", code: 0, userInfo: nil))
             return
